@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <title>TrackVest</title>
+    <style>
+      .div2 .service-card p {
+        padding-left: 30px;
+        color: black;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .div2 .container3 .mf-container {
+        color: black;
+        padding-left: 40px;
+      }
+      .div3 {
+        height: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: #dee1e6;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .div3 .container4 {
+        padding-left: 15px;
+        margin: 0px 30px 0px 30px;
+        height: 100%;
+        width: fit-content;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 1400px;
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+      .div3 .container4 h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        position: relative !important;
+        padding-bottom: 15px;
+        text-align: left;
+      }
+      .div3 .container4 h1::after {
+        content: "";
+        position: absolute !important;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #ff7527;
+      }
+
+      .div3 .container5 {
+        padding-left: 15px;
+        margin: 0px 30px 0px 30px;
+        height: 100%;
+        width: fit-content;
+        max-width: 1500px;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 1400px;
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+      .div3 .container5 h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        position: relative !important;
+        padding-bottom: 15px;
+        text-align: left;
+      }
+      .div3 .container5 h1::after {
+        content: "";
+        position: absolute !important;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #ff7527;
+      }
+      .div3 .container4 p,
+      .div3 .container5 p {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .mission-section {
+        margin-bottom: 60px;
+      }
+
+      .service-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .service-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #ff7527;
+      }
+
+      .service-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .service-card {
+        flex: 1;
+        min-width: 250px;
+        padding: 30px;
+        border-radius: 10px;
+        border: 2px solid #00bf63;
+        background-color: #f9f9f9;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #ff7527;
+      }
+
+      .service-card p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* MacBook Air specific fixes */
+      @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        /* Ensure menu items are positioned properly */
+
+        nav .menu {
+          margin-left: 15px;
+        }
+
+        /* Make sure all dropdowns have proper z-index */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          background-color: white;
+          border-radius: 4px;
+          min-width: 180px;
+        }
+
+        /* Force dropdowns to stay open when needed */
+        .dropdown-content.keep-open,
+        .stock-market-content.keep-open,
+        .mutual-fund-content.keep-open,
+        .banking-content.keep-open,
+        .post-office-content.keep-open,
+        .real-estate-content.keep-open {
+          display: block !important;
+          /* z-index: 999; */
+        }
+
+        /* Make nested dropdown links more clickable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 16px;
+          display: block;
+          width: 100%;
+          position: relative;
+        }
+
+        /* Add indicator for items with submenus */
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          font-size: 10px;
+          position: absolute;
+          right: 10px;
+        }
+        .service-section {
+          margin: 0px 20px;
+        }
+      }
+      /* Mobile Menu Styles */
+      @media (max-width: 768px) {
+        /* Clean up mobile menu display */
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1001;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          display: none;
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        /* Make buttons stack nicely */
+        .log-in,
+        .get-started {
+          width: 100%;
+          margin: 5px 0;
+        }
+        .div2 .container3 {
+          padding: 0px 30px;
+        }
+        /* .div1 .container #log-in,
+        .div1 .container #sign-up {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px; 
+          align-items: center;
+        }
+
+        .div1 .container a {
+          width: 80%;
+        }
+        .div1 .container button {
+          padding: 8px 16px; 
+        } */
+      }
+      @media screen and (min-width: 768px) and (max-width: 834px) {
+        .div1 .container #log-in,
+        .div1 .container #sign-up {
+          display: block;
+          width: 80%;
+          max-width: 200px;
+          margin: 10px auto;
+        }
+      }
+      @media screen and (min-width: 800px) and (max-width: 1200px){
+        nav .menu{
+          margin-left: -60px; 
+        }
+        .service-section{
+          margin: 0px 20px;;
+        }
+      }
+      .div3,
+      .div4 {
+        height: 100%;
+        background-color: #dee1e6;
+      }
+      .div2 .container3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #dee1e6;
+      }
+      .div3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .div3 .container4 {
+        /* min-width: 1300px; */
+        max-width: 1400px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a class="home" href="homepage.html">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="">SIP</a>
+                      <a href="">SWP</a>
+                      <a href="">STP</a>
+                    </div>
+                  </div>
+                  <a href="">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="">FD</a>
+                  <a href="">RD</a>
+                  <a href="">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="">FD</a>
+                  <a href="">RD</a>
+                  <a href="">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="">Land</a>
+                  <a href="">Flat/House</a>
+                  <a href="">Shop</a>
+                </div>
+              </div>
+              <a href="#">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <a href="login.html"
+            ><li><button class="log-in">Log In</button></li></a
+          >
+          <a href="signup.html"
+            ><li><button class="get-started">Get Started</button></li></a
+          >
+        </ul>
+      </div>
+    </nav>
+    <div class="div1">
+      <div class="container">
+        <h1>
+          Your Financial <br />
+          Future, One Click <br />
+          Away.
+        </h1>
+        <h6>
+          One dashboard to track all your investments,<br />
+          anytime, anywhere.
+        </h6>
+        <a href="login.html"><button id="log-in">Log in</button></a>
+        <a href="signup.html"><button id="sign-up">Sign up</button></a>
+      </div>
+      <div class="container2">
+        <img src="hero-section-image.jpg" alt="" />
+      </div>
+    </div>
+    <div class="div2">
+      <div class="container3">
+        <div class="service-section">
+          <h2 class="service-title">Our Services</h2>
+          <div class="service-container">
+            <div class="service-card">
+              <h3>Stock Market</h3>
+              <p>Stock</p>
+              <p>Mutual Funds</p>
+              <div class="mf-container">
+                <p>SIP</p>
+                <p>SWP</p>
+                <p>STP</p>
+              </div>
+              <p>Future & Options</p>
+            </div>
+            <div class="service-card">
+              <h3>Banking</h3>
+              <p>FD</p>
+              <p>RD</p>
+              <p>PPF</p>
+            </div>
+            <div class="service-card">
+              <h3>Post Office</h3>
+              <p>Post Office FD</p>
+              <p>Post Office RD</p>
+              <p>Post Office PPF</p>
+            </div>
+            <div class="service-card">
+              <h3>Real Estate</h3>
+              <p>Land</p>
+              <p>Flat/House</p>
+              <p>Shop</p>
+            </div>
+            <div class="service-card">
+              <h3>Gold/Silver</h3>
+              <p>Gold/Silver</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div3">
+      <div class="container4">
+        <h1>About Us</h1>
+        <p>
+          TrackVest is a comprehensive investment tracking platform designed to
+          help you manage all your investments in one place. Whether you're
+          investing in stocks, mutual funds, real estate, or precious metals, we
+          provide the tools you need to make informed decisions and secure your
+          financial future.
+        </p>
+      </div>
+      <div class="container5">
+        <h1>Contact Us</h1>
+        <p>Email: tejas.khatri209@gmail.com</p>
+        <p>Phone: 95584 87907</p>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ****
+        // Check if user is already logged in
+        if (sessionStorage.getItem("isLoggedIn") === "true") {
+          // Redirect to homepage if already logged in
+          window.location.href = "homepage.html";
+        }
+
+        // Home link logic
+        const homeLink = document.querySelector(".home");
+        if (homeLink) {
+          homeLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            // No need to check login status here since we're already
+            // redirecting based on login status at page load
+          });
+        }
+
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        }
+
+        // Handle mobile dropdown menus
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+
+            // Handle nested dropdowns in mobile
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+
+      // Update mobile menu on window resize
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          document.querySelector(".menu").classList.remove("active");
+        }
+      });
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 480) {
+          document.querySelector(".menu").classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

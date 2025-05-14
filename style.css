@@ -1,0 +1,577 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  /* list-style-type: none; */
+  background-color: black;
+  color: white;
+  position: fixed;
+  /* z-index: 1; */
+  /* overflow: hidden; */
+  /* align-items: center; */
+}
+.logo img {
+  height: 100px;
+  width: auto;
+  padding-left: 10px;
+}
+nav .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-left: 350px; */
+  flex-grow: 1;
+  margin-left: 200px;
+}
+nav .menu li {
+  color: white;
+  list-style: none;
+  margin: 0 25px;
+}
+
+nav div ul {
+  float: right;
+  display: flex;
+  margin: 10px;
+}
+nav div {
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+.log-in {
+  height: auto;
+  width: 150px;
+  border-radius: 50px;
+}
+.get-started {
+  height: auto;
+  width: 200px;
+  color: white;
+  border-radius: 50px;
+  background-color: rgb(217, 111, 73);
+}
+
+.services li {
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  list-style: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content,
+.stock-market-content,
+.mutual-fund-content,
+.banking-content,
+.post-office-content,
+.real-estate-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.stock-market-content {
+  top: 0;
+  left: 100%;
+}
+.mutual-fund-content {
+  top: 30%;
+  left: 100%;
+}
+.banking-content {
+  top: 20%;
+  left: 100%;
+}
+.post-office-content {
+  top: 40%;
+  left: 100%;
+}
+.real-estate-content {
+  top: 60%;
+  left: 100%;
+}
+.dropdown-content a,
+.stock-market-content a,
+.mutual-fund-content a,
+.banking-content a,
+.post-office-content a,
+.real-estate-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover,
+.stock-market-content a:hover,
+.mutual-fund-content a:hover,
+.banking-content a:hover,
+.post-office-content a:hover,
+.real-estate-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content,
+.stock-market:hover .stock-market-content,
+.mutual-fund:hover .mutual-fund-content,
+.banking:hover .banking-content,
+.post-office:hover .post-office-content,
+.real-estate:hover .real-estate-content {
+  display: block;
+}
+.div1 {
+  height: 100vh;
+  width: 100%;
+  padding-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dee1e6;
+}
+.div1 .container {
+  height: 500px;
+  width: 700px;
+  border: 1px solid black;
+  margin: 10px 40px;
+  background-color: #ebebf5;
+  border-radius: 20px;
+}
+.div1 .container2 {
+  height: 500px;
+  width: 700px;
+  margin: 10px 10px;
+  overflow: hidden;
+}
+.div1 .container2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.div1 .container h1 {
+  font-size: 60px;
+  font-weight: 700;
+  padding: 20px 30px;
+}
+.div1 .container h6 {
+  font-size: 25px;
+  padding: 5px 30px;
+}
+
+
+.container a {
+  text-decoration: none;
+}
+.container a #log-in {
+  height: 50px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebebf5;
+  margin: 50px 30px;
+}
+.container #sign-up {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff7527;
+  color: white;
+  margin: -100px 200px;
+}
+
+/* Add responsive styles */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  nav .menu {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav .menu {
+    margin-left: 50px;
+  }
+
+  nav .menu li {
+    margin: 0 15px;
+  }
+
+  .div1 .container {
+    width: 500px;
+  }
+
+  .div1 .container2 {
+    width: 400px;
+  }
+
+  .div1 .container h1 {
+    font-size: 48px;
+  }
+
+  .div1 .container h6 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+  }
+
+  nav .menu {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    background-color: black;
+    width: 100%;
+    height: calc(100vh - 100px);
+    transition: 0.5s;
+    margin-left: 0;
+    padding: 20px 0;
+    overflow-y: auto;
+  }
+
+  nav .menu.active {
+    left: 0;
+  }
+
+  nav .menu ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  nav .menu li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .log-in,
+  .get-started {
+    margin: 10px 0;
+  }
+
+  .div1 {
+    flex-direction: column;
+    padding-top: 120px;
+    height: auto;
+  }
+
+  .div1 .container,
+  .div1 .container2 {
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+  }
+
+  .div1 .container {
+    padding-bottom: 30px;
+  }
+
+  .div1 .container h1 {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .div1 .container h6 {
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+
+  .container a #log-in {
+    margin: 30px auto;
+  }
+
+  .container #sign-up {
+    margin: -80px auto 30px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 80px;
+  }
+
+  .div1 .container h1 {
+    font-size: 32px;
+  }
+
+  .div1 .container h6 {
+    font-size: 16px;
+  }
+
+  .container a #log-in,
+  .container #sign-up {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .dropdown-content,
+  .stock-market-content,
+  .mutual-fund-content,
+  .banking-content,
+  .post-office-content,
+  .real-estate-content {
+    min-width: 180px;
+  }
+
+  /* Fix button positioning on mobile */
+  .container a #log-in {
+    margin: 20px auto;
+    display: block;
+  }
+
+  .container #sign-up {
+    margin: 20px auto;
+    display: block;
+  }
+}
+/* Analysis Container Styles */
+.analysis-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  max-height: 90vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow-y: auto;
+  display: none;
+  padding: 20px;
+}
+
+.close-analysis {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #718096;
+}
+
+.close-analysis:hover {
+  color: #e53e3e;
+}
+
+.analysis-content h2 {
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Summary Cards */
+.analysis-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 0 10px 20px;
+  text-align: center;
+}
+
+.gold-card {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+}
+
+.silver-card {
+  background-color: #f5f5f5;
+  border-left: 4px solid #6c757d;
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  color: #4a5568;
+  font-size: 18px;
+}
+
+.summary-card .amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #2d3748;
+}
+
+.summary-card .percentage {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* Distribution Chart */
+.distribution-chart {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.pie-chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+/* Timeline Section */
+.timeline-section {
+  margin-bottom: 40px;
+}
+
+.timeline-section h3 {
+  color: #2d3748;
+  margin-bottom: 15px;
+}
+
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.timeline-table th,
+.timeline-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.timeline-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.timeline-table tr:hover {
+  background-color: #f5f7fa;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.recommendations-section h3 {
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.recommendations-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.recommendations-section li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .analysis-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .summary-card {
+    min-width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+  }
+  .div3 .container4,
+  .div3 .container5 {
+    padding: 40px;
+    margin-bottom: 20px;
+  }
+
+  .div3 .container4 p,
+  .div3 .container5 p {
+    font-size: 16px;
+  }
+}

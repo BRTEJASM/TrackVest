@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <title>TrackVest - Post Office RD</title>
+    <style>
+      .user img {
+        height: 30px;
+        width: 30px;
+        background: none;
+        top: 15%;
+        position: absolute;
+        float: right;
+        left: 98%;
+        overflow: hidden;
+      }
+      .user .logOut {
+        display: none;
+        height: 40px;
+        width: 90px;
+        background-color: white;
+        top: 20%;
+        position: absolute;
+        float: right;
+        left: 94%;
+        color: red;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 500;
+      }
+      .container3 {
+        min-height: 110vh;
+        width: 100%;
+        background-color: #dee1e6;
+        padding-bottom: 30px;
+      }
+      .container3 h1 {
+        padding-top: 10%;
+        padding-left: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 50px;
+        font-weight: 800;
+      }
+      .div3 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .container3 .div3 .addRD,
+      .container3 .div3 .analysis {
+        margin: 10px 20px;
+        height: 40px;
+        width: 200px;
+        background-color: #ff7527;
+        border: 2px solid #00bf63;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 0px 20px 0px 20px;
+
+        border-radius: 5px;
+      }
+      form .container4 {
+        padding: 20px;
+        height: 650px;
+        width: 800px;
+        top: 5%;
+        left: 25%;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        z-index: 100;
+      }
+      form .container4 input {
+        height: 40px;
+        width: 750px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f3f4f6;
+        padding: 10px 0px 10px 10px;
+      }
+      form .container4 label {
+        padding: 10px 0px;
+        font-weight: 650;
+      }
+      form .container4 button {
+        float: inline-end;
+        height: 50px;
+        width: 150px;
+        background-color: #ff7527;
+        border: 2px solid #00bf63;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 0px 20px 0px 20px;
+
+        border-radius: 5px;
+        margin: 20px 10px;
+      }
+
+      /* PO RD Table Styles */
+      .rd-table-container {
+        width: 90%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .rd-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .rd-table th,
+      .rd-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .rd-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #4a5568;
+      }
+
+      .rd-table tr:hover {
+        background-color: #f5f7fa;
+      }
+
+      .remove-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #718096;
+      }
+
+      .remove-btn:hover {
+        color: #e53e3e;
+      }
+
+      .no-rds-message {
+        text-align: center;
+        padding: 30px;
+        color: #718096;
+        font-style: italic;
+      }
+
+      /* new css for analysis */
+      /* Analysis Container Styles */
+      .analysis-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 900px;
+        max-height: 90vh;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .close-analysis {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #718096;
+      }
+
+      .analysis-content h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2d3748;
+      }
+
+      .analysis-summary {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .summary-card {
+        flex: 1;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 0 10px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .summary-card h3 {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 10px;
+      }
+
+      .summary-card .amount {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2d3748;
+      }
+
+      .sector-allocation,
+      .top-holdings-section,
+      .timeline-section,
+      .recommendations-section {
+        margin-bottom: 30px;
+      }
+
+      .sector-chart-container,
+      .top-holdings-table,
+      .timeline-table {
+        margin-top: 15px;
+      }
+
+      .sector-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .chart-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 5px 10px;
+      }
+
+      .legend-color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 3px;
+      }
+
+      .top-holdings-table,
+      .timeline-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .top-holdings-table th,
+      .top-holdings-table td,
+      .timeline-table th,
+      .timeline-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .top-holdings-table th,
+      .timeline-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #4a5568;
+      }
+
+      .recommendations-section ul {
+        padding-left: 20px;
+      }
+
+      .recommendations-section li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      /* Analysis Button Styles */
+      .analysis {
+        display: inline-block;
+        background-color: #4299e1;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 10px;
+      }
+
+      .analysis:hover {
+        background-color: #3182ce;
+      }
+
+      /* Responsive Design Rules */
+      @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        .user .logOut {
+          float: right;
+          left: 93%;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        .container3 h1 {
+          padding-top: 15%;
+        }
+
+        .rd-table-container {
+          width: 95%;
+          overflow-x: auto;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        .container3 h1 {
+          padding-top: 20%;
+          font-size: 36px;
+        }
+
+        .div3 {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .container3 .div3 .addRD,
+        .container3 .div3 .analysis {
+          width: 80%;
+          max-width: 300px;
+          margin: 5px auto;
+        }
+
+        form .container4 {
+          width: 90%;
+          height: auto;
+          left: 5%;
+          padding: 15px;
+        }
+
+        form .container4 input {
+          width: 100%;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        .container3 h1 {
+          padding-top: 35%;
+          font-size: 28px;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 80%;
+        }
+
+        form .container4 {
+          padding: 10px;
+        }
+
+        form .container4 h1 {
+          font-size: 24px;
+        }
+
+        form .container4 button {
+          width: 100%;
+          margin: 10px 0;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+
+      /* Add smooth scrolling for better mobile experience */
+      .rd-table-container {
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Improve touch targets for mobile */
+      button,
+      .remove-btn,
+      .close-analysis {
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      /* Ensure form inputs are easy to tap on mobile */
+      input {
+        min-height: 44px;
+      }
+
+      /* Fix for iOS input zoom */
+      @media screen and (max-width: 768px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+          font-size: 16px;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+
+      /* Improve table responsiveness */
+      .rd-table,
+      .top-holdings-table,
+      .timeline-table {
+        min-width: 200px;
+      }
+
+      /* Add smooth transitions */
+      .container4
+      /* .analysis-container  */ {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Improve focus states for accessibility */
+      button:focus,
+      input:focus {
+        outline: 2px solid #6469eb;
+        outline-offset: 2px;
+      }
+      /* Mobile Menu Styles */
+      @media (max-width: 768px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1000;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+          padding-left: 0;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          /* display: none; */
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        /* Responsive homepage content while preserving alignment */
+        .div1 {
+          flex-direction: column;
+          padding-top: 20px;
+        }
+
+        .div1 .container h1 {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        .div1 .container2 img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 84%;
+        }
+        .analysis-container {
+          width: 95%;
+          padding: 15px;
+        }
+
+        .analysis-summary {
+          flex-direction: column;
+        }
+
+        .summary-card {
+          margin: 0 0 10px 0;
+        }
+
+        .sector-chart {
+          width: 150px;
+          height: 150px;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+
+      /* Smaller screens */
+      @media (max-width: 480px) {
+        body {
+          height: 150vh;
+          background-color: #dee1e6;
+        }
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+        .div1 .container h1 {
+          font-size: 34px;
+        }
+
+        .menu {
+          padding-left: 0;
+        }
+
+        .user img {
+          left: 85%;
+        }
+
+        .user .logOut {
+          left: 75%;
+        }
+        form .container4 .category-options {
+          display: block;
+        }
+        form .container4 .category-options .category-btn {
+          width: 300px;
+        }
+        form .container4 .type-btn {
+          height: 100px;
+        }
+      }
+      /* Chart Section Styling
+      /* Chart Section Styling */
+      .charts-section {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .charts-section h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      .charts-section h4 {
+        color: #555;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      /* Bar and Pie Chart Container Layout */
+      .end-charts-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
+      }
+
+      .yearly-chart-container,
+      .pie-chart-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        flex: 1;
+      }
+
+      .yearly-chart-container {
+        min-width: 50%;
+      }
+
+      .pie-chart-container {
+        min-width: 40%;
+      }
+
+      /* Year Button Container */
+      .year-button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        width: fit-content;
+      }
+      .year-button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Space between buttons */
+        width: 100%;
+        align-items: center;
+      }
+
+      .year-button {
+        background-color: #ff7527;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        white-space: nowrap; /* Prevent text wrapping within button */
+      }
+
+      .year-button:hover {
+        background-color: #ff5722;
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 600px) {
+        .year-button-container {
+          gap: 5px; /* Smaller gap on smaller screens */
+        }
+
+        .year-button {
+          padding: 8px 12px; /* Slightly smaller buttons on mobile */
+          font-size: 0.9em;
+        }
+      }
+      .year-button {
+        background-color: #ff7f50;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .year-button:hover {
+        background-color: #ff6347;
+      }
+
+      .year-button:active {
+        background-color: #ff4500;
+      }
+
+      /* Bar and Pie Chart Containers */
+      .bar-chart-container,
+      .pie-chart-container {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px;
+        /* margin-bottom: 20px; */
+      }
+
+      .bar-chart-container canvas,
+      .pie-chart-container canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .end-charts-container {
+          flex-direction: column;
+        }
+
+        .yearly-chart-container,
+        .pie-chart-container {
+          min-width: 100%;
+        }
+      }
+
+      /* Scrollbar for Chart Container */
+      .bar-chart-container,
+      .pie-chart-container {
+        scrollbar-width: thin;
+        scrollbar-color: #ff7f50 #f1f1f1;
+      }
+
+      .bar-chart-container::-webkit-scrollbar,
+      .pie-chart-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .bar-chart-container::-webkit-scrollbar-track,
+      .pie-chart-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      .bar-chart-container::-webkit-scrollbar-thumb,
+      .pie-chart-container::-webkit-scrollbar-thumb {
+        background-color: #ff7f50;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="stock.html">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="sip.html">SIP</a>
+                      <a href="swp.html">SWP</a>
+                      <a href="stp.html">STP</a>
+                    </div>
+                  </div>
+                  <a href="f&o.html">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="fd.html">FD</a>
+                  <a href="rd.html">RD</a>
+                  <a href="ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="po_fd.html">FD</a>
+                  <a href="po_rd.html">RD</a>
+                  <a href="po_ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="land.html">Land</a>
+                  <a href="flat-house.html">Flat/House</a>
+                  <a href="shop.html">Shop</a>
+                </div>
+              </div>
+              <a href="gold-silver.html">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="user">
+      <img id="user" src="user.png" alt="" />
+      <div>
+        <p class="logOut">Log Out</p>
+      </div>
+    </div>
+    <div class="container3">
+      <h1>Post Office RD</h1>
+      <div class="div3">
+        <button class="addRD">ADD RD</button>
+        <button class="analysis">ANALYSIS</button>
+      </div>
+
+      <!-- PO RD Table Container -->
+      <div class="rd-table-container">
+        <table class="rd-table">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Post Office Name</th>
+              <th>RD Amount(Monthly)</th>
+              <th>RD Interest</th>
+              <th>RD Maturity Date</th>
+              <th>Maturity Amount</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="rd-table-body">
+            <!-- RD data will be populated here dynamically -->
+          </tbody>
+        </table>
+        <div id="no-rds-message" class="no-rds-message">
+          No Post Office RDs added yet. Click "ADD RD" to add your first Post
+          Office Recurring Deposit.
+        </div>
+      </div>
+    </div>
+
+    <form action="">
+      <div class="container4">
+        <h1>Post Office RD Detail</h1>
+
+        <label for="post-office-name">Post Office Name</label>
+        <div>
+          <input
+            type="text"
+            name=""
+            id="post-office-name"
+            placeholder="Post Office Name"
+          />
+        </div>
+
+        <label for="rd-amount">RD Installment</label>
+        <div>
+          <input type="number" name="" id="rd-amount" placeholder="RD Amount" />
+        </div>
+
+        <label for="rd-interest">RD Interest</label>
+        <div>
+          <input
+            type="number"
+            name=""
+            id="rd-interest"
+            placeholder="RD Interest"
+            step="0.01"
+          />
+        </div>
+
+        <label for="maturity-date">RD Maturity Date</label>
+        <div>
+          <input type="date" name="" id="maturity-date" />
+        </div>
+
+        <label for="maturity-amount">Maturity Amount</label>
+        <div>
+          <input
+            type="number"
+            name=""
+            id="maturity-amount"
+            placeholder="Maturity Amount"
+          />
+        </div>
+
+        <div>
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <script>
+       // Redirect to login page if user is not logged in
+      if (sessionStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "index.html";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const user = document.querySelector("#user");
+        const logOut = document.querySelector(".logOut");
+        const rdTableBody = document.getElementById("rd-table-body");
+        const noRdsMessage = document.getElementById("no-rds-message");
+        
+
+        // Ensure logOut div starts hidden
+        logOut.style.display = "none";
+
+        // Handle Home link redirection
+        const homeLinks = document.querySelectorAll("a[href='/']");
+        homeLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (sessionStorage.getItem("isLoggedIn") === "true") {
+              window.location.href = "homepage.html";
+            } else {
+              window.location.href = "index.html";
+            }
+          });
+        });
+
+        // Toggle logOut div when clicking user
+        user.addEventListener("click", (e) => {
+          e.preventDefault();
+          logOut.style.display =
+            logOut.style.display === "block" ? "none" : "block";
+        });
+
+        // Handle logout button click
+        logOut.addEventListener("click", () => {
+          // Keep email and password for "remember me" functionality
+          localStorage.removeItem("userData");
+          localStorage.setItem("isLoggedIn", "false");
+          sessionStorage.removeItem("isLoggedIn");
+          window.location.href = "index.html";
+        });
+
+        // Add event listener for post office name and interest rate to calculate maturity amount
+        const rdAmount = document.getElementById("rd-amount");
+        const rdInterest = document.getElementById("rd-interest");
+        const maturityDate = document.getElementById("maturity-date");
+        const maturityAmount = document.getElementById("maturity-amount");
+
+        // Calculate maturity amount when inputs change
+        [rdAmount, rdInterest, maturityDate].forEach((input) => {
+          input.addEventListener("change", calculateMaturityAmount);
+        });
+
+        function calculateMaturityAmount() {
+          const monthlyAmount = parseFloat(rdAmount.value);
+          const interest = parseFloat(rdInterest.value);
+          const date = new Date(maturityDate.value);
+
+          if (monthlyAmount && interest && !isNaN(date.getTime())) {
+            const today = new Date();
+            const timeDiff = date.getTime() - today.getTime();
+            const tenureMonths = Math.round(
+              timeDiff / (1000 * 3600 * 24 * 30.4)
+            ); // Convert to months
+
+            if (tenureMonths > 0) {
+              const monthlyRate = interest / (12 * 100); // Monthly interest rate
+
+              // RD Maturity Formula for Monthly Investments
+              // A = P * [(1 + r)^n - 1] / r
+              // Where:
+              // A = Maturity Amount
+              // P = Monthly Deposit
+              // r = Monthly Interest Rate
+              // n = Number of Months
+              const maturityAmountValue =
+                monthlyAmount *
+                ((Math.pow(1 + monthlyRate, tenureMonths) - 1) / monthlyRate);
+
+              maturityAmount.value = maturityAmountValue.toFixed(2);
+
+              // Automatically generate monthly installment data
+              const monthlyInstallmentData = {};
+              let currentDate = new Date(today);
+
+              // First month's installment
+              const firstMonthKey = `${currentDate.getFullYear()}-${String(
+                currentDate.getMonth() + 1
+              ).padStart(2, "0")}`;
+              monthlyInstallmentData[firstMonthKey] = monthlyAmount;
+
+              // Generate subsequent monthly installments
+              for (let i = 1; i < tenureMonths; i++) {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                const monthKey = `${currentDate.getFullYear()}-${String(
+                  currentDate.getMonth() + 1
+                ).padStart(2, "0")}`;
+                monthlyInstallmentData[monthKey] = monthlyAmount;
+              }
+
+              // Store monthly installment data in a hidden input or data attribute
+              const monthlyInstallmentInput = document.getElementById(
+                "monthly-installment-data"
+              );
+              if (!monthlyInstallmentInput) {
+                const hiddenInput = document.createElement("input");
+                hiddenInput.type = "hidden";
+                hiddenInput.id = "monthly-installment-data";
+                hiddenInput.name = "monthly-installment-data";
+                document.querySelector("form").appendChild(hiddenInput);
+              }
+              document.getElementById("monthly-installment-data").value =
+                JSON.stringify(monthlyInstallmentData);
+            }
+          } else {
+            maturityAmount.value = "Invalid input"; // Handle errors
+          }
+        }
+
+
+        // Function to load and display PO RDs
+        function loadRDs() {
+          // Get PO RDs from localStorage
+          const rds = JSON.parse(localStorage.getItem("poRdsData")) || [];
+
+          // Clear the table body
+          rdTableBody.innerHTML = "";
+
+          // Show/hide message based on whether there are RDs
+          if (rds.length === 0) {
+            noRdsMessage.style.display = "block";
+          } else {
+            noRdsMessage.style.display = "none";
+
+            // Populate table with RD data
+            rds.forEach((rd, index) => {
+              // Format the date for display
+              const date = new Date(rd.maturityDate);
+              const formattedDate = date.toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              });
+
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${rd.postOfficeName.toUpperCase()}</td>
+                <td>${parseFloat(rd.rdAmount).toLocaleString()}</td>
+                <td>${rd.rdInterest}%</td>
+                <td>${formattedDate}</td>
+                <td>${parseFloat(rd.maturityAmount).toLocaleString()} (approximate)</td>
+                <td>
+                  <button class="remove-btn" data-index="${index}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                    </svg>
+                  </button>
+                </td>
+              `;
+              rdTableBody.appendChild(row);
+            });
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll(".remove-btn").forEach((button) => {
+              button.addEventListener("click", function () {
+                const index = parseInt(this.getAttribute("data-index"));
+                removeRD(index);
+              });
+            });
+          }
+        }
+
+        // Function to remove a PO RD
+        function removeRD(index) {
+          // Get PO RDs from localStorage
+          let rds = JSON.parse(localStorage.getItem("poRdsData")) || [];
+
+          // Confirm deletion
+          if (
+            confirm(
+              `Are you sure you want to remove ${rds[index].postOfficeName} RD?`
+            )
+          ) {
+            // Remove the RD
+            rds.splice(index, 1);
+
+            // Save updated RDs to localStorage
+            localStorage.setItem("poRdsData", JSON.stringify(rds));
+
+            // Reload the table
+            loadRDs();
+          }
+        }
+
+        // Load PO RDs when page loads
+        loadRDs();
+
+        // Get elements for the form
+        const addRDButton = document.querySelector(".addRD");
+        const rdForm = document.querySelector(".container4");
+        const submitButton = document.getElementById("submit");
+
+        // Initially hide the form
+        rdForm.style.display = "none";
+
+        // Show form when ADD RD button is clicked
+        addRDButton.addEventListener("click", function () {
+          rdForm.style.display = "block";
+        });
+
+        // Handle form submission
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const postOfficeName = document
+            .getElementById("post-office-name")
+            .value.toUpperCase();
+          const rdAmount = document.getElementById("rd-amount").value;
+          const rdInterest = document.getElementById("rd-interest").value;
+          const maturityDate = document.getElementById("maturity-date").value;
+          const maturityAmount =
+            document.getElementById("maturity-amount").value;
+
+            // Get monthly installment data
+          const monthlyInstallmentData = document.getElementById(
+            "monthly-installment-data"
+          );
+          const installmentData = monthlyInstallmentData
+            ? JSON.parse(monthlyInstallmentData.value)
+            : {};
+
+          // Validate form (basic validation)
+          if (
+            !postOfficeName ||
+            !rdAmount ||
+            !rdInterest ||
+            !maturityDate ||
+            !maturityAmount
+          ) {
+            alert("Please fill in all fields");
+            return;
+          }
+
+          // Create PO RD object
+          const rdData = {
+            postOfficeName: postOfficeName,
+            rdAmount: rdAmount,
+            rdInterest: rdInterest,
+            maturityDate: maturityDate,
+            maturityAmount: maturityAmount,
+          };
+
+          // Get existing PO RDs from localStorage or initialize empty array
+          let rds = JSON.parse(localStorage.getItem("poRdsData")) || [];
+
+          // Add new PO RD data
+          rds.push(rdData);
+
+          // Save to localStorage
+          localStorage.setItem("poRdsData", JSON.stringify(rds));
+
+          // Reset form
+          document.querySelector("form").reset();
+
+          // Hide form
+          rdForm.style.display = "none";
+
+          // Reload the RDs table
+          loadRDs();
+
+          // Show success message
+          alert("Post Office Recurring Deposit added successfully!");
+        });
+
+        // new code for analysis
+        // Handle analysis button click
+        const analysisButton = document.querySelector(".analysis");
+analysisButton.addEventListener("click", function () {
+          // Get RDs data from localStorage
+          const rds = JSON.parse(localStorage.getItem("rdsData")) || [];
+
+          if (rds.length === 0) {
+            alert("No Recurring Deposits to analyze. Please add RDs first.");
+            return;
+          }
+
+          // Generate monthly investment data
+          const monthlyInvestmentData = generateMonthlyInvestmentData();
+
+          // Function to generate monthly investment data
+          function generateMonthlyInvestmentData() {
+            const rds = JSON.parse(localStorage.getItem("rdsData")) || [];
+            const monthlyData = {};
+
+            rds.forEach((rd) => {
+              const startDate = new Date();
+              const endDate = new Date(rd.maturityDate);
+              const monthlyAmount = parseFloat(rd.rdAmount);
+
+              let currentDate = new Date(startDate);
+              while (currentDate <= endDate) {
+                const monthKey = `${currentDate.getFullYear()}-${String(
+                  currentDate.getMonth() + 1
+                ).padStart(2, "0")}`;
+                if (!monthlyData[monthKey]) {
+                  monthlyData[monthKey] = 0;
+                }
+                monthlyData[monthKey] += monthlyAmount;
+                currentDate.setMonth(currentDate.getMonth() + 1);
+              }
+            });
+
+            return monthlyData;
+          }
+          // Create analysis container (or use existing one if it exists)
+          let analysisContainer = document.getElementById(
+            "rd-analysis-container"
+          );
+          if (!analysisContainer) {
+            analysisContainer = document.createElement("div");
+            analysisContainer.id = "rd-analysis-container";
+            analysisContainer.className = "analysis-container";
+            document
+              .querySelector(".container3")
+              .appendChild(analysisContainer);
+          }
+
+          // Calculate analysis data
+          const totalMonthlyContribution = rds.reduce(
+            (total, rd) => total + parseFloat(rd.rdAmount),
+            0
+          );
+
+          const totalMaturityAmount = rds.reduce(
+            (total, rd) => total + parseFloat(rd.maturityAmount),
+            0
+          );
+
+          // Calculate approximate total contributions over time
+          const totalEstimatedContributions = rds.reduce((total, rd) => {
+            const startDate = new Date();
+            const endDate = new Date(rd.maturityDate);
+            const monthsDiff = Math.round(
+              (endDate - startDate) / (1000 * 60 * 60 * 24 * 30.4)
+            );
+            return total + parseFloat(rd.rdAmount) * monthsDiff;
+          }, 0);
+
+          const totalInterestEarned =
+            totalMaturityAmount - totalEstimatedContributions;
+
+          // Group RDs by bank for allocation
+          const bankData = {};
+          rds.forEach((rd) => {
+            if (!bankData[rd.bankName]) {
+              bankData[rd.bankName] = 0;
+            }
+            bankData[rd.bankName] += parseFloat(rd.rdAmount);
+          });
+
+          // Group RDs by interest rate ranges
+          const interestRangeData = {
+            "Below 5%": 0,
+            "5% - 6%": 0,
+            "6% - 7%": 0,
+            "7% - 8%": 0,
+            "Above 8%": 0,
+          };
+
+          rds.forEach((rd) => {
+            const rate = parseFloat(rd.rdInterest);
+            const amount = parseFloat(rd.rdAmount);
+
+            if (rate < 5) {
+              interestRangeData["Below 5%"] += amount;
+            } else if (rate >= 5 && rate < 6) {
+              interestRangeData["5% - 6%"] += amount;
+            } else if (rate >= 6 && rate < 7) {
+              interestRangeData["6% - 7%"] += amount;
+            } else if (rate >= 7 && rate < 8) {
+              interestRangeData["7% - 8%"] += amount;
+            } else {
+              interestRangeData["Above 8%"] += amount;
+            }
+          });
+
+          // Remove empty ranges
+          Object.keys(interestRangeData).forEach((range) => {
+            if (interestRangeData[range] === 0) {
+              delete interestRangeData[range];
+            }
+          });
+
+          // Group RDs by maturity year for timeline analysis
+          const timelineData = {};
+          rds.forEach((rd) => {
+            const date = new Date(rd.maturityDate);
+            const year = date.getFullYear();
+
+            if (!timelineData[year]) {
+              timelineData[year] = 0;
+            }
+            timelineData[year] += parseFloat(rd.maturityAmount);
+          });
+
+          // Sort timeline keys chronologically
+          const sortedTimelineKeys = Object.keys(timelineData).sort(
+            (a, b) => a - b
+          );
+
+          // Clear previous analysis if any
+          analysisContainer.innerHTML = "";
+
+          // Create close button
+          const closeButton = document.createElement("button");
+          closeButton.className = "close-analysis";
+          closeButton.innerHTML = "✕";
+          closeButton.addEventListener("click", function () {
+            analysisContainer.style.display = "none";
+          });
+
+          // Create analysis content
+          const content = document.createElement("div");
+          content.className = "analysis-content";
+
+          // Add header
+          const header = document.createElement("h2");
+          header.textContent = "Recurring Deposit Portfolio Analysis";
+          content.appendChild(header);
+
+          // Add summary section
+          const summarySection = document.createElement("div");
+          summarySection.className = "analysis-summary";
+
+          summarySection.innerHTML = `
+    <div class="summary-card">
+      <h3>Monthly Contribution</h3>
+      <p class="amount">₹${totalMonthlyContribution.toLocaleString()}</p>
+    </div>
+    <div class="summary-card">
+      <h3>Total Maturity Value</h3>
+      <p class="amount">₹${totalMaturityAmount.toLocaleString()} (approximate)</p>
+    </div>
+    <div class="summary-card">
+      <h3>Estimated Interest Earnings</h3>
+      <p class="amount">₹${totalInterestEarned.toLocaleString()} (approximate)</p>
+    </div>
+    `;
+
+          content.appendChild(summarySection);
+
+          // Add bank allocation chart
+          const bankSection = document.createElement("div");
+          bankSection.className = "sector-allocation";
+
+          const bankHeader = document.createElement("h3");
+          bankHeader.textContent = "Bank-wise Allocation";
+          bankSection.appendChild(bankHeader);
+
+          // Create visual representation for bank allocation
+          const chartDiv = document.createElement("div");
+          chartDiv.className = "sector-chart-container";
+
+          // Generate colors for banks
+          const colors = [
+            "#4299e1", // Blue
+            "#48bb78", // Green
+            "#ed8936", // Orange
+            "#9f7aea", // Purple
+            "#f56565", // Red
+            "#38b2ac", // Teal
+            "#667eea", // Indigo
+            "#d69e2e", // Yellow
+            "#e53e3e", // Red
+            "#805ad5", // Purple
+          ];
+
+          // Calculate percentages for banks
+          const bankPercentages = {};
+          Object.keys(bankData).forEach((bank) => {
+            bankPercentages[bank] = Math.round(
+              (bankData[bank] / totalMonthlyContribution) * 100
+            );
+          });
+
+          // Create conic gradient for pie chart
+          let conicGradientValue = "";
+          let currentDegree = 0;
+
+          Object.keys(bankData).forEach((bank, index) => {
+            const percentage = bankPercentages[bank];
+            const color = colors[index % colors.length];
+
+            // Calculate degrees for this bank (3.6 degrees = 1%)
+            const bankDegrees = percentage * 3.6;
+
+            // Add to gradient
+            if (index > 0) {
+              conicGradientValue += ", ";
+            }
+
+            conicGradientValue += `${color} ${currentDegree}deg ${
+              currentDegree + bankDegrees
+            }deg`;
+            currentDegree += bankDegrees;
+          });
+
+          // Create chart HTML
+          let chartHTML = `
+    <div class="sector-chart" style="background: conic-gradient(${conicGradientValue})"></div>
+    <div class="chart-legend">
+    `;
+
+          // Add legend items
+          Object.keys(bankData).forEach((bank, index) => {
+            const percentage = bankPercentages[bank];
+            const color = colors[index % colors.length];
+
+            chartHTML += `
+      <div class="legend-item">
+        <span class="legend-color" style="background-color: ${color}"></span>
+        <span>${bank} (${percentage}%)</span>
+      </div>
+    `;
+          });
+
+          chartHTML += `</div>`;
+          chartDiv.innerHTML = chartHTML;
+          bankSection.appendChild(chartDiv);
+          content.appendChild(bankSection);
+
+          // Add interest rate distribution chart
+          if (Object.keys(interestRangeData).length > 1) {
+            const interestSection = document.createElement("div");
+            interestSection.className = "sector-allocation";
+
+            const interestHeader = document.createElement("h3");
+            interestHeader.textContent = "Interest Rate Distribution";
+            interestSection.appendChild(interestHeader);
+
+            const interestChartDiv = document.createElement("div");
+            interestChartDiv.className = "sector-chart-container";
+
+            // Calculate percentages for interest ranges
+            const interestPercentages = {};
+            Object.keys(interestRangeData).forEach((range) => {
+              interestPercentages[range] = Math.round(
+                (interestRangeData[range] / totalMonthlyContribution) * 100
+              );
+            });
+
+            // Create conic gradient for pie chart
+            let interestGradientValue = "";
+            let interestDegree = 0;
+
+            Object.keys(interestRangeData).forEach((range, index) => {
+              const percentage = interestPercentages[range];
+              const color = colors[index % colors.length];
+
+              // Calculate degrees for this range (3.6 degrees = 1%)
+              const interestDegrees = percentage * 3.6;
+
+              // Add to gradient
+              if (index > 0) {
+                interestGradientValue += ", ";
+              }
+
+              interestGradientValue += `${color} ${interestDegree}deg ${
+                interestDegree + interestDegrees
+              }deg`;
+              interestDegree += interestDegrees;
+            });
+
+            // Create chart HTML
+            let interestChartHTML = `
+      <div class="sector-chart" style="background: conic-gradient(${interestGradientValue})"></div>
+      <div class="chart-legend">
+      `;
+
+            // Add legend items
+            Object.keys(interestRangeData).forEach((range, index) => {
+              const percentage = interestPercentages[range];
+              const color = colors[index % colors.length];
+
+              interestChartHTML += `
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: ${color}"></span>
+          <span>${range} (${percentage}%)</span>
+        </div>
+      `;
+            });
+
+            interestChartHTML += `</div>`;
+            interestChartDiv.innerHTML = interestChartHTML;
+            interestSection.appendChild(interestChartDiv);
+            content.appendChild(interestSection);
+          }
+
+          // Add top holdings section
+          const topHoldingsSection = document.createElement("div");
+          topHoldingsSection.className = "top-holdings-section";
+
+          const topHoldingsHeader = document.createElement("h3");
+          topHoldingsHeader.textContent = "Top RD Holdings";
+          topHoldingsSection.appendChild(topHoldingsHeader);
+          // Modify the charts section to use actual investment data
+          const chartSection = document.createElement("div");
+          chartSection.className = "charts-section";
+
+          const chartHeader = document.createElement("h3");
+          chartHeader.textContent = "Investment Analysis";
+          chartSection.appendChild(chartHeader);
+
+          // Create yearly investment chart
+          const yearlyChartContainer = document.createElement("div");
+          yearlyChartContainer.className = "yearly-chart-container";
+
+          const yearlyChartTitle = document.createElement("h4");
+          yearlyChartTitle.textContent = "Yearly Investment";
+          yearlyChartContainer.appendChild(yearlyChartTitle);
+
+          // Group investments by year
+          const yearlyInvestmentData = {};
+          Object.entries(monthlyInvestmentData).forEach(
+            ([monthKey, amount]) => {
+              const year = monthKey.split("-")[0];
+              if (!yearlyInvestmentData[year]) {
+                yearlyInvestmentData[year] = 0;
+              }
+              yearlyInvestmentData[year] += amount;
+            }
+          );
+
+          const yearlyBarChart = createBarChart(
+            yearlyChartContainer,
+            yearlyInvestmentData
+          );
+          yearlyChartContainer.appendChild(yearlyBarChart);
+
+          // Create container for monthly charts
+          const monthlyChartContainer = document.createElement("div");
+          monthlyChartContainer.className = "monthly-chart-container";
+          monthlyChartContainer.style.display = "none";
+
+          const monthlyChartTitle = document.createElement("h4");
+          monthlyChartTitle.textContent = "Monthly Investment";
+          monthlyChartContainer.appendChild(monthlyChartTitle);
+
+          // Create year selection buttons
+          const yearButtonContainer = document.createElement("div");
+          yearButtonContainer.className = "year-button-container";
+
+          // Get unique years from monthly investment data
+          const uniqueYears = [
+            ...new Set(
+              Object.keys(monthlyInvestmentData).map((key) => key.split("-")[0])
+            ),
+          ];
+
+          uniqueYears.forEach((year) => {
+            const yearButton = document.createElement("button");
+            yearButton.textContent = year;
+            yearButton.className = "year-button";
+
+            yearButton.addEventListener("click", () => {
+              // Filter monthly data for the selected year
+              const yearMonthlyData = {};
+              Object.entries(monthlyInvestmentData).forEach(
+                ([monthKey, amount]) => {
+                  if (monthKey.startsWith(year)) {
+                    // Extract month name
+                    const monthNum = parseInt(monthKey.split("-")[1]);
+                    const monthName = new Date(
+                      year,
+                      monthNum - 1
+                    ).toLocaleString("default", { month: "long" });
+                    yearMonthlyData[monthName] = amount;
+                  }
+                }
+              );
+
+              // Create monthly bar chart
+              monthlyChartContainer.innerHTML = ""; // Clear previous content
+              monthlyChartContainer.appendChild(monthlyChartTitle);
+
+              const monthlyBarChart = createBarChart(
+                monthlyChartContainer,
+                yearMonthlyData,
+                true
+              );
+              monthlyChartContainer.appendChild(monthlyBarChart);
+              monthlyChartContainer.style.display = "block";
+            });
+
+            yearButtonContainer.appendChild(yearButton);
+          });
+
+          // Add charts to the section
+          chartSection.appendChild(yearlyChartContainer);
+          chartSection.appendChild(yearButtonContainer);
+          chartSection.appendChild(monthlyChartContainer);
+
+          // Add charts section to the content
+          content.appendChild(chartSection);
+
+          // Sort RDs by investment amount
+          const sortedRDs = [...rds].sort(
+            (a, b) => parseFloat(b.rdAmount) - parseFloat(a.rdAmount)
+          );
+
+          // Take top 5 or all if less than 5
+          const topRDs = sortedRDs.slice(0, Math.min(5, sortedRDs.length));
+
+          const topHoldingsTable = document.createElement("table");
+          topHoldingsTable.className = "top-holdings-table";
+
+          let topHoldingsHTML = `
+    <thead>
+      <tr>
+        <th>Bank Name</th>
+        <th>Monthly Amount</th>
+        <th>Interest Rate</th>
+        <th>Maturity Value (approximate)</th>
+        <th>% of Portfolio</th>
+      </tr>
+    </thead>
+    <tbody>
+    `;
+
+          topRDs.forEach((rd) => {
+            const percentOfPortfolio = Math.round(
+              (parseFloat(rd.rdAmount) / totalMonthlyContribution) * 100
+            );
+
+            topHoldingsHTML += `
+      <tr>
+        <td>${rd.bankName}</td>
+        <td>₹${parseFloat(rd.rdAmount).toLocaleString()}</td>
+        <td>${rd.rdInterest}%</td>
+        <td>₹${parseFloat(rd.maturityAmount).toLocaleString()}</td>
+        <td>${percentOfPortfolio}%</td>
+      </tr>
+    `;
+          });
+
+          topHoldingsHTML += `</tbody>`;
+          topHoldingsTable.innerHTML = topHoldingsHTML;
+
+          topHoldingsSection.appendChild(topHoldingsTable);
+          content.appendChild(topHoldingsSection);
+
+          // Add maturity timeline section
+          if (sortedTimelineKeys.length > 0) {
+            const timelineSection = document.createElement("div");
+            timelineSection.className = "timeline-section";
+
+            const timelineHeader = document.createElement("h3");
+            timelineHeader.textContent = "Maturity Timeline";
+            timelineSection.appendChild(timelineHeader);
+
+            const timelineTable = document.createElement("table");
+            timelineTable.className = "timeline-table";
+
+            let timelineHTML = `
+      <thead>
+        <tr>
+          <th>Maturity Year</th>
+          <th>Maturity Amount (approximate)</th>
+          <th>% of Total</th>
+        </tr>
+      </thead>
+      <tbody>
+      `;
+
+            sortedTimelineKeys.forEach((year) => {
+              const amount = timelineData[year];
+              const percentOfTotal = Math.round(
+                (amount / totalMaturityAmount) * 100
+              );
+
+              timelineHTML += `
+        <tr>
+          <td>${year}</td>
+          <td>₹${amount.toLocaleString()}</td>
+          <td>${percentOfTotal}%</td>
+        </tr>
+      `;
+            });
+
+            timelineHTML += `</tbody>`;
+            timelineTable.innerHTML = timelineHTML;
+
+            timelineSection.appendChild(timelineTable);
+            content.appendChild(timelineSection);
+          }
+
+          // Add recommendations section
+          const recommendationsSection = document.createElement("div");
+          recommendationsSection.className = "recommendations-section";
+
+          const recommendationsHeader = document.createElement("h3");
+          recommendationsHeader.textContent = "Insights & Recommendations";
+          recommendationsSection.appendChild(recommendationsHeader);
+
+          const recommendationsList = document.createElement("ul");
+
+          // Generate some basic recommendations based on data
+          const recommendations = [];
+
+          // Check for diversification
+          if (Object.keys(bankData).length < 3 && rds.length > 3) {
+            recommendations.push(
+              "Consider diversifying your Recurring Deposits across more banks to reduce concentration risk."
+            );
+          }
+
+          // Check for concentration risk
+          const largestHolding = topRDs[0];
+          if (largestHolding) {
+            const largestPercentage = Math.round(
+              (parseFloat(largestHolding.rdAmount) / totalMonthlyContribution) *
+                100
+            );
+
+            if (largestPercentage > 30) {
+              recommendations.push(
+                `Your largest RD (${largestHolding.bankName}) represents ${largestPercentage}% of your portfolio. Consider spreading investments across multiple banks.`
+              );
+            }
+          }
+
+          // Check interest rates
+          const avgInterestRate =
+            rds.reduce((total, rd) => total + parseFloat(rd.rdInterest), 0) /
+            rds.length;
+
+          if (avgInterestRate < 6) {
+            recommendations.push(
+              "Your average interest rate is below 6%. Consider exploring banks offering higher rates for better returns."
+            );
+          }
+
+          // Check maturity timeline
+          const currentYear = new Date().getFullYear();
+          let sameYearMaturity = 0;
+
+          rds.forEach((rd) => {
+            const maturityYear = new Date(rd.maturityDate).getFullYear();
+            if (maturityYear === currentYear) {
+              sameYearMaturity++;
+            }
+          });
+
+          if (sameYearMaturity > Math.ceil(rds.length / 2)) {
+            recommendations.push(
+              "Multiple RDs are maturing in the same year. Consider laddering your RDs with different maturity dates for periodic liquidity."
+            );
+          }
+
+          // Add general recommendation
+          recommendations.push(
+            "Consider increasing your monthly contributions to maximize the benefits of compounding interest."
+          );
+
+          recommendations.push(
+            "Regularly compare interest rates offered by different banks to maximize returns on your recurring deposits."
+          );
+
+          recommendations.forEach((rec) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = rec;
+            recommendationsList.appendChild(listItem);
+          });
+
+          recommendationsSection.appendChild(recommendationsList);
+          content.appendChild(recommendationsSection);
+
+          // Add content and close button to the container
+          analysisContainer.appendChild(closeButton);
+          analysisContainer.appendChild(content);
+
+          // Show the analysis container
+          analysisContainer.style.display = "block";
+        });
+
+        function createBarChart(
+          container,
+          data,
+          initialData,
+          maturityDate,
+          monthlyInstallment
+        ) {
+          // Create a comprehensive data set from start to maturity date
+          const extendedData = {};
+          const startDate = new Date(Object.keys(data)[0]);
+          const endDate = new Date(maturityDate);
+
+          // Clone initial data
+          Object.keys(data).forEach((key) => {
+            extendedData[key] = data[key];
+          });
+
+          // Fill in missing months/years
+          let currentDate = new Date(startDate);
+          while (currentDate <= endDate) {
+            const dateKey = `${currentDate.getFullYear()}-${String(
+              currentDate.getMonth() + 1
+            ).padStart(2, "0")}`;
+
+            if (!extendedData[dateKey]) {
+              extendedData[dateKey] = monthlyInstallment;
+            }
+
+            currentDate.setMonth(currentDate.getMonth() + 1);
+          }
+
+          // Sort data chronologically
+          const sortedKeys = Object.keys(extendedData).sort((a, b) => {
+            return new Date(a) - new Date(b);
+          });
+
+          // Create chart container with responsive design
+          const chartContainer = document.createElement("div");
+          chartContainer.style.cssText = `
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+  `;
+
+          const chartWrapper = document.createElement("div");
+          chartWrapper.style.cssText = `
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 250px;
+    position: relative;
+    min-width: max-content;
+  `;
+
+          const labelContainer = document.createElement("div");
+          labelContainer.style.cssText = `
+    display: flex;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    gap: 5px;
+    overflow-x: auto;
+  `;
+
+          // Find max value for scaling
+          const maxValue = Math.max(...Object.values(extendedData));
+
+          // Render bars
+          sortedKeys.forEach((key) => {
+            const value = extendedData[key];
+            const barHeight = (value / maxValue) * 200;
+
+            const barElement = document.createElement("div");
+            barElement.style.cssText = `
+      width: 40px;
+      background-color: #ff7527;
+      height: ${barHeight}px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    `;
+
+            const valueLabel = document.createElement("div");
+            valueLabel.textContent = `₹${value.toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`;
+            valueLabel.style.cssText = `
+            writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-weight: 500;
+      font-size: 10px;
+      color: black;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 2px 0;
+    `;
+
+            const yearLabel = document.createElement("div");
+            yearLabel.textContent = key;
+            yearLabel.style.cssText = `
+      font-size: 10px;
+      width: 40px;
+      text-align: center;
+      
+    `;
+
+            // Only add value label if bar height is sufficient
+            if (barHeight > 20) {
+              barElement.appendChild(valueLabel);
+            }
+
+            chartWrapper.appendChild(barElement);
+            labelContainer.appendChild(yearLabel.cloneNode(true));
+          });
+
+          chartWrapper.appendChild(labelContainer);
+          chartContainer.appendChild(chartWrapper);
+
+          // Append to existing container
+          const targetContainer = document.querySelector(
+            ".sector-chart-container"
+          );
+          if (targetContainer) {
+            targetContainer.appendChild(chartContainer);
+          }
+
+          return chartContainer;
+        }
+ 
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle && menu) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        }
+        
+        // Function to handle dropdowns
+        function setupDropdown(parentSelector, contentSelector) {
+          const parentElement = document.querySelector(parentSelector);
+          const contentElement = document.querySelector(contentSelector);
+
+          if (parentElement && contentElement) {
+            parentElement.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Hide other dropdowns
+              document
+                .querySelectorAll(
+                  ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+                )
+                .forEach((dropdown) => {
+                  if (dropdown !== contentElement) {
+                    dropdown.classList.remove("show");
+                  }
+                });
+
+              // Toggle the clicked dropdown
+              contentElement.classList.toggle("show");
+            });
+          }
+        }
+        // Setup main Services menu dropdown
+        setupDropdown(".services", ".dropdown-content");
+
+        // Setup nested dropdowns inside Services
+        setupDropdown(".stock-market > a", ".stock-market-content");
+        setupDropdown(".mutual-fund > a", ".mutual-fund-content");
+        setupDropdown(".banking > a", ".banking-content");
+        setupDropdown(".post-office > a", ".post-office-content");
+        setupDropdown(".real-estate > a", ".real-estate-content");
+
+        // Reset dropdowns when switching to desktop mode
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            if (menu) menu.classList.remove("active");
+            document
+              .querySelectorAll(
+                ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+              )
+              .forEach((dropdown) => dropdown.classList.remove("show"));
+          }
+        });
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

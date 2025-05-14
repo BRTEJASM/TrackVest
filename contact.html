@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <title>Contact Us - TrackVest</title>
+    <style>
+      /* Preserve original styles */
+      .menu {
+        margin: 0;
+        padding-left: 100px;
+      }
+      .user img {
+        height: 30px;
+        width: 30px;
+        background: none;
+        top: 15%;
+        position: absolute;
+        float: right;
+        left: 98%;
+        overflow: hidden;
+      }
+      .user .logOut {
+        display: none;
+        height: 40px;
+        width: 90px;
+        background-color: white;
+        top: 20%;
+        position: absolute;
+        float: right;
+        left: 94%;
+        color: red;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* Contact page specific styles */
+      .contact-container {
+        background-color: #dee1e6;
+        min-height: calc(100vh - 100px);
+        padding: 60px 0;
+      }
+      .contact-container h1.display-4 {
+        margin-top: 50px; /* You can adjust this value as needed */
+      }
+
+      .contact-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+
+      .contact-info {
+        padding: 40px;
+        background-color: #f8f9fa;
+      }
+
+      .contact-info h3 {
+        color: #333;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .contact-info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+
+      .contact-info-item i {
+        font-size: 20px;
+        color: #444;
+        margin-right: 15px;
+        min-width: 24px;
+      }
+
+      .contact-form {
+        padding: 40px;
+      }
+
+      .contact-form h3 {
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .form-control {
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #333;
+        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        background-color: #333;
+      }
+
+      /* Add menu toggle for mobile */
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 1002;
+      }
+      @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        .user .logOut {
+          float: right;
+          left: 93%;
+        }
+      }
+      @media screen and (min-width: 800px) and (max-width: 1200px) {
+        nav .menu {
+          padding-left: 5px;
+        }
+        .user .logOut {
+          float: right;
+          left: 93%;
+        }
+      }
+      /* Mobile Menu Styles */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1000;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+          padding-left: 0;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 84%;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 25px;
+        }
+        .contact-container h1.display-4 {
+          margin-top: 80px; /* You can adjust this value as needed */
+        }
+      }
+
+      /* Smaller screens */
+      @media (max-width: 480px) {
+        .menu {
+          padding-left: 0;
+        }
+
+        .user img {
+          left: 85%;
+        }
+
+        .user .logOut {
+          left: 75%;
+        }
+
+        .contact-container {
+          padding: 30px 0;
+        }
+        .contact-container h1.display-4 {
+          margin-top: 80px; /* You can adjust this value as needed */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a href="/" class="home">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="stock.html">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="#">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="sip.html">SIP</a>
+                      <a href="swp.html">SWP</a>
+                      <a href="stp.html">STP</a>
+                    </div>
+                  </div>
+                  <a href="f&o.html">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="fd.html">FD</a>
+                  <a href="rd.html">RD</a>
+                  <a href="ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="po_fd.html">FD</a>
+                  <a href="po_rd.html">RD</a>
+                  <a href="po_ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="land.html">Land</a>
+                  <a href="flat-house.html">Flat/House</a>
+                  <a href="shop.html">Shop</a>
+                </div>
+              </div>
+              <a href="gold-silver.html">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="user">
+      <img id="user" src="user.png" alt="" />
+      <div>
+        <p class="logOut">Log Out</p>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mb-5 text-center">
+            <h1 class="display-4 fw-bold">Get in Touch</h1>
+            <p class="lead">
+              We're here to answer your questions about investment tracking.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="contact-card">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info-item">
+                      <i class="bi bi-geo-alt-fill">📍</i>
+                      <div>
+                        <h5>Address</h5>
+                        <p>Anjar<br />Kachchh District<br />Gujarat, 370110</p>
+                      </div>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="bi bi-telephone-fill">📞</i>
+                      <div>
+                        <h5>Phone</h5>
+                        <p>+91 95584 87907</p>
+                      </div>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="bi bi-envelope-fill">✉️</i>
+                      <div>
+                        <h5>Email</h5>
+                        <p>tejas.khatri209@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="bi bi-clock-fill">⏰</i>
+                      <div>
+                        <h5>Working Hours</h5>
+                        <p>Monday - Friday: 9 AM - 6 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                      <div class="mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          autocomplete="name"
+                          placeholder="Your Name"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          autocomplete="email"
+                          placeholder="Your Email"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="subject"
+                          placeholder="Subject"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <textarea
+                          class="form-control"
+                          id="message"
+                          placeholder="Your Message"
+                          required
+                        ></textarea>
+                      </div>
+                      <button type="submit" class="submit-btn">
+                        Send Message
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        alert(
+          "ATTENTION: We're experiencing technical difficulties.Please call or mail us directly for immediate assistance"
+        );
+        // Check if user is already logged in
+        if (sessionStorage.getItem("isLoggedIn") === "true") {
+          // Redirect to homepage if already logged in
+          window.location.href = "homepage.html";
+        }
+        const user = document.querySelector("#user");
+        const logOut = document.querySelector(".logOut");
+        const userContainer = document.querySelector(".user");
+
+        // Check login status and handle user visibility
+        if (sessionStorage.getItem("isLoggedIn") === "true") {
+          // User is logged in, show user icon and enable logout functionality
+          if (userContainer) userContainer.style.display = "block";
+
+          if (user && logOut) {
+            logOut.style.display = "none";
+
+            user.addEventListener("click", (e) => {
+              e.preventDefault();
+              logOut.style.display =
+                logOut.style.display === "block" ? "none" : "block";
+            });
+
+            logOut.addEventListener("click", () => {
+              sessionStorage.removeItem("isLoggedIn");
+              if (localStorage.getItem("rememberMe") !== "true") {
+                localStorage.removeItem("email");
+                localStorage.removeItem("password");
+              }
+              window.location.href = "login.html"; // Redirect to login
+            });
+          }
+        } else {
+          // User is not logged in, hide user icon and logout button
+          if (userContainer) userContainer.style.display = "none";
+        }
+
+        const homeLinks = document.querySelectorAll("a[href='/']");
+        homeLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (sessionStorage.getItem("isLoggedIn") === "true") {
+              window.location.href = "homepage.html";
+            } else {
+              window.location.href = "index.html";
+            }
+          });
+        });
+        const allDropdownLinks = document.querySelectorAll(
+          ".dropdown-content a, .stock-market-content a, .mutual-fund-content a, .banking-content a, .post-office-content a, .real-estate-content a"
+        );
+        allDropdownLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetUrl = link.getAttribute("href");
+
+            // Only navigate to the href if the user is logged in
+            if (sessionStorage.getItem("isLoggedIn") === "true") {
+              window.location.href = targetUrl;
+            } else {
+              // If not logged in, redirect to index.html
+              window.location.href = "index.html";
+            }
+          });
+        });
+
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        }
+
+        // Handle mobile dropdown menus
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+
+            // Handle nested dropdowns in mobile
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+      // Contact form submission
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          // Here you would normally send the data to your server
+          // For now, we'll just show an alert
+          alert(
+            `Thank you, ${name}! Your message has been received. We'll get back to you soon.`
+          );
+
+          // Reset the form
+          contactForm.reset();
+        });
+      }
+
+      // Update mobile menu on window resize
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          document.querySelector(".menu").classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

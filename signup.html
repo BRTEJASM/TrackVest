@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    <title>TrackVest-Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <style>
+      
+      /* Mobile Menu Styles from login.html */
+      @media (max-width: 768px) {
+        /* Clean up mobile menu display */
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1000;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          display: none;
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+      }
+
+      /* Core styles for signup page */
+      .div2 {
+        height: 100vh;
+        width: 100%;
+        padding-top: 4%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #dee1e6;
+      }
+      .div2 .container {
+        height: 500px;
+        width: 700px;
+        border: 1px solid black;
+        margin: 10px 40px;
+        background-color: #ebebf5;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .div2 .container2 {
+        height: 500px;
+        width: 500px;
+        border: 2px solid #00bf63;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 40px;
+      }
+      .div2 .container h1 {
+        font-size: 60px;
+        font-weight: 700;
+        padding: 20px 30px;
+      }
+      .div2 .container2 .email {
+        display: block;
+        margin-bottom: 5px;
+        margin-left: -70%;
+      }
+      .div2 .container2 .password {
+        display: block;
+        margin-bottom: 5px;
+        margin-left: -65%;
+      }
+      .div2 .container2 label {
+        padding-top: 10px;
+      }
+      .div2 .container2 input {
+        height: 40px;
+        width: 400px;
+        margin: 5px 50px;
+        border: none;
+        border-radius: 10px;
+      }
+      .div2 .container2 input[type="email"],
+      .div2 .container2 input[type="password"] {
+        padding: 10px;
+      }
+      .div2 .container2 #remember {
+        height: 15px;
+        width: 15px;
+        margin: 20px 5px;
+      }
+      .div2 .container2 .forgot {
+        margin-left: 130px;
+        margin-right: 5px;
+      }
+      .div2 .container2 #sign-up {
+        background-color: #ff7527;
+        color: white;
+      }
+      .div2 .container2 .sign-up {
+        padding-left: 20px;
+      }
+      .div2 .container2 #sign-in:hover {
+        background-color: #ff7527;
+        color: white;
+      }
+      .div2 .container2 p {
+        margin-top: 30px;
+      }
+      .error {
+        color: red;
+        font-weight: 500;
+        margin-top: -2px;
+        margin-bottom: 5px;
+        text-align: left;
+        margin-left: 50px;
+      }
+
+      /* Responsive styles for signup page */
+      @media (max-width: 1200px) {
+        .div2 .container {
+          width: 600px;
+          text-align: center;
+        }
+        .div2 .container2 {
+          width: 450px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .div2 .container {
+          width: 500px;
+          text-align: center;
+        }
+        .div2 .container h1 {
+          font-size: 48px;
+        }
+        .div2 .container2 {
+          width: 400px;
+        }
+        .div2 .container2 input {
+          width: 350px;
+          margin: 5px 25px;
+        }
+        .div2 .container2 .forgot {
+          margin-left: 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .div2 {
+          flex-direction: column;
+          padding-top: 120px;
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .div2 .container,
+        .div2 .container2 {
+          width: 90%;
+          margin: 10px auto;
+        }
+
+        .div2 .container {
+          height: auto;
+          padding: 20px 0;
+          text-align: center;
+        }
+
+        .div2 .container h1 {
+          font-size: 36px;
+        }
+
+        .div2 .container2 input {
+          width: 90%;
+          margin: 5px auto;
+        }
+
+        .div2 .container2 .email,
+        .div2 .container2 .password {
+          margin-left: 5%;
+        }
+
+        .div2 .container2 .forgot {
+          margin-left: 50px;
+        }
+
+        .error {
+          margin-left: 5%;
+          width: 90%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .div2 .container h1 {
+          font-size: 30px;
+          padding: 15px 20px;
+        }
+
+        .div2 .container2 h1 {
+          font-size: 24px;
+        }
+
+        .div2 .container2 .forgot {
+          margin-left: 20px;
+          display: block;
+          margin-top: 10px;
+        }
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a class="home" href="homepage.html">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="">SIP</a>
+                      <a href="">SWP</a>
+                      <a href="">STP</a>
+                    </div>
+                  </div>
+                  <a href="">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="">FD</a>
+                  <a href="">RD</a>
+                  <a href="">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="">FD</a>
+                  <a href="">RD</a>
+                  <a href="">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="">Land</a>
+                  <a href="">Flat/House</a>
+                  <a href="">Shop</a>
+                </div>
+              </div>
+              <a href="#">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="div2">
+      <div class="container">
+        <h1>
+          Sign up and <br />
+          take control of <br />
+          your investments.
+        </h1>
+      </div>
+      <div class="container2">
+        <form action="">
+          <h1>Sign Up</h1>
+          <div>
+            <label for="email" class="email">Email:</label>
+            <input
+              class="form-control"
+              type="email"
+              name="myEmail"
+              id="email"
+              placeholder="  example.email@gmail.com"
+              required
+              autocomplete="off"
+            />
+            <div class="error" id="emailerror"></div>
+          </div>
+          <div>
+            <label for="password" class="password">Password:</label>
+            <input
+              class="form-control"
+              type="password"
+              name=""
+              id="password"
+              placeholder="  Enter at least 8+ characters "
+              required
+              autocomplete="off"
+            />
+            <div class="error" id="passworderror"></div>
+          </div>
+          <div>
+            <input type="checkbox" name="" id="remember" checked />Remember me
+            <a href="" class="forgot">Forgot Password?</a>
+          </div>
+          <div>
+            <input type="submit" value="Sign Up" id="sign-up" />
+          </div>
+          <div>
+            <p>
+              Already have an account?<a href="login.html" class="sign-up"
+                >Log In</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+   
+    <script>
+      // Home link logic
+      const homeLink = document.querySelector(".home");
+      if (homeLink) {
+        homeLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          // Check if user is logged in
+          if (sessionStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "homepage.html";
+          } else {
+            window.location.href = "index.html";
+          }
+        });
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Reset container height function
+        function resetContainerHeight() {
+          // Check if there are any errors
+          const hasErrors = Array.from(
+            document.querySelectorAll(".error")
+          ).some((el) => el.textContent !== "");
+
+          // Set container height based on errors
+          document.querySelector(".container2").style.height = hasErrors
+            ? "600px"
+            : "500px";
+        }
+
+        // Handle form submission
+        document.getElementById("sign-up").addEventListener("click", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const rememberMe = document.getElementById("remember").checked;
+
+          // Regular Expressions for validation
+          const emailRegex =
+            /^[A-Za-z0-9]+(?:[.%_+][A-Za-z0-9]+)*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+          const passwordRegex =
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[\W_]).{8,}$/;
+
+          // Clear previous errors
+          document.querySelectorAll(".error").forEach((curElem) => {
+            curElem.textContent = "";
+          });
+
+          let isValid = true;
+
+          // Validation
+          if (!emailRegex.test(email)) {
+            document.getElementById("emailerror").textContent =
+              "Email is not valid";
+            isValid = false;
+          }
+
+          if (!passwordRegex.test(password)) {
+            document.getElementById("passworderror").textContent =
+              "Password must be at least 8 characters and include at least 1 uppercase, 1 lowercase, 1 number, and 1 special character";
+            isValid = false;
+          }
+
+          // Update container height
+          resetContainerHeight();
+
+          if (isValid) {
+            // For a real app, we would store credentials
+            let userData = {
+              email: email,
+              password: password,
+            };
+
+            // Store user data in LocalStorage
+            localStorage.setItem("userData", JSON.stringify(userData));
+
+            // Store Remember Me preferences if checked
+            if (rememberMe) {
+              localStorage.setItem("rememberMe", "true");
+              localStorage.setItem("email", email);
+              localStorage.setItem("password", password);
+            }
+
+            // Redirect to login page or homepage
+            window.location.href = "index.html";
+          }
+        });
+
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        }
+
+        // Handle mobile dropdown menus
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+
+            // Handle nested dropdowns in mobile
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+
+      // Update mobile menu on window resize
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          document.querySelector(".menu").classList.remove("active");
+        }
+      });
+
+      // Initialize Google Sign-In when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        initGoogleAuth();
+      });
+    </script>
+  </body>
+</html>

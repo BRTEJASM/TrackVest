@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <title>TrackVest</title>
+    <style>
+      .user img {
+        height: 30px;
+        width: 30px;
+        background: none;
+        /* background-color: #dee1e6; */
+        /* padding-top: 120px; */
+        top: 15%;
+        position: absolute;
+        float: right;
+        left: 98%;
+        overflow: hidden;
+      }
+      .user .logOut {
+        display: none;
+        height: 40px;
+        width: 90px;
+        background-color: white;
+        top: 20%;
+        position: absolute;
+        float: right;
+        left: 94%;
+        color: red;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 500;
+      }
+      .container3 {
+        min-height: 100vh;
+        width: 100%;
+        background-color: #dee1e6;
+        padding-bottom: 30px;
+      }
+      .container3 h1 {
+        padding-top: 10%;
+        padding-left: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 50px;
+        font-weight: 800;
+      }
+      .div3 {
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .container3 .div3 .addStocks,
+      .container3 .div3 .analysis {
+        margin: 10px 20px;
+        height: 40px;
+        width: 200px;
+        background-color: #ff7527;
+        border: 2px solid #00bf63;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 0px 20px 0px 20px;
+
+        border-radius: 5px;
+      }
+      form .container4 {
+        padding: 20px;
+        height: 700px;
+        width: 600px;
+        top: 5%;
+        left: 30%;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        z-index: 100;
+      }
+      form .container4 input {
+        height: 40px;
+        width: 550px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f3f4f6;
+        padding: 10px 0px 10px 10px;
+      }
+      form .container4 label {
+        padding: 10px 0px;
+        font-weight: 650;
+      }
+      form .container4 button {
+        float: inline-end;
+        height: 50px;
+        width: 150px;
+        background-color: #ff7527;
+        border: 2px solid #00bf63;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 0px 20px 0px 20px;
+
+        border-radius: 5px;
+        margin: 20px 10px;
+      }
+
+      /* Stock Table Styles */
+      .stock-table-container {
+        width: 90%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .stock-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .stock-table th,
+      .stock-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .stock-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #4a5568;
+      }
+
+      .stock-table tr:hover {
+        background-color: #f5f7fa;
+      }
+
+      .remove-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #718096;
+      }
+
+      .remove-btn:hover {
+        color: #e53e3e;
+      }
+
+      .no-stocks-message {
+        text-align: center;
+        padding: 30px;
+        color: #718096;
+        font-style: italic;
+      }
+      /* new css for analysis */
+      /* Analysis Container Styles */
+      .analysis-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 900px;
+        max-height: 90vh;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .close-analysis {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #718096;
+      }
+
+      .analysis-content h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2d3748;
+      }
+
+      .analysis-summary {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .summary-card {
+        flex: 1;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 0 10px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .summary-card h3 {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 10px;
+      }
+
+      .summary-card .amount {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2d3748;
+      }
+
+      .sector-allocation,
+      .top-holdings-section,
+      .timeline-section,
+      .recommendations-section {
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+
+      .sector-chart-container,
+      .top-holdings-table,
+      .timeline-table {
+        margin-top: 15px;
+      }
+
+      .sector-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .chart-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 5px 10px;
+      }
+
+      .legend-color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 3px;
+      }
+
+      .top-holdings-table,
+      .timeline-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .top-holdings-table th,
+      .top-holdings-table td,
+      .timeline-table th,
+      .timeline-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .top-holdings-table th,
+      .timeline-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #4a5568;
+      }
+
+      .recommendations-section ul {
+        padding-left: 20px;
+      }
+
+      .recommendations-section li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+      /* new css for analysis */
+      /* Update these CSS rules for the pie chart */
+      .sector-chart-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .sector-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .chart-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        max-width: 600px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 5px 10px;
+      }
+
+      .legend-color {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 3px;
+      }
+      /* Responsive Design Rules */
+      @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        .user .logOut {
+          float: right;
+          left: 93%;
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        .container3 h1 {
+          padding-top: 15%;
+        }
+
+        .stock-table-container {
+          width: 95%;
+          overflow-x: auto;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .container3 h1 {
+          padding-top: 20%;
+          font-size: 36px;
+        }
+
+        .div3 {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .container3 .div3 .addStocks,
+        .container3 .div3 .analysis {
+          width: 80%;
+          max-width: 300px;
+          margin: 5px auto;
+        }
+
+        form .container4 {
+          width: 90%;
+          height: auto;
+          left: 5%;
+          padding: 15px;
+        }
+
+        form .container4 input {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .container3 h1 {
+          padding-top: 35%;
+          font-size: 28px;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 80%;
+        }
+
+        form .container4 {
+          padding: 10px;
+        }
+
+        form .container4 h1 {
+          font-size: 24px;
+        }
+
+        form .container4 button {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+
+      /* Add smooth scrolling for better mobile experience */
+      .stock-table-container {
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Improve touch targets for mobile */
+      button,
+      .remove-btn,
+      .close-analysis {
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      /* Ensure form inputs are easy to tap on mobile */
+      input {
+        min-height: 44px;
+      }
+
+      /* Fix for iOS input zoom */
+      @media screen and (max-width: 768px) {
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+          font-size: 16px;
+        }
+      }
+
+      /* Improve table responsiveness */
+      .stock-table,
+      .top-holdings-table,
+      .timeline-table {
+        min-width: 300px;
+      }
+
+      /* Add smooth transitions */
+      .container4
+      /* .analysis-container  */ {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Improve focus states for accessibility */
+      button:focus,
+      input:focus {
+        outline: 2px solid #6469eb;
+        outline-offset: 2px;
+      }
+      /* Mobile Menu Styles */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1000;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+          padding-left: 0;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          /* display: none; */
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        /* Responsive homepage content while preserving alignment */
+        .div1 {
+          flex-direction: column;
+          padding-top: 20px;
+        }
+
+        .div1 .container h1 {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        .div1 .container2 img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 84%;
+        }
+        .analysis-container {
+          width: 95%;
+          padding: 15px;
+        }
+
+        .analysis-summary {
+          flex-direction: column;
+        }
+
+        .summary-card {
+          margin: 0 0 10px 0;
+        }
+
+        .sector-chart {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      /* Smaller screens */
+      @media (max-width: 480px) {
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+        .div1 .container h1 {
+          font-size: 34px;
+        }
+
+        .menu {
+          padding-left: 0;
+        }
+
+        .user img {
+          left: 85%;
+        }
+
+        .user .logOut {
+          left: 75%;
+        }
+      }
+      /* Chart Section Styling */
+      /* Chart Section Styling */
+      .charts-section {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .charts-section h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      .charts-section h4 {
+        color: #555;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      /* Bar and Pie Chart Container Layout */
+      .end-charts-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
+      }
+
+      .yearly-chart-container,
+      .pie-chart-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        flex: 1;
+      }
+
+      .yearly-chart-container {
+        min-width: 50%;
+      }
+
+      .pie-chart-container {
+        min-width: 40%;
+      }
+
+      /* Year Button Container */
+      .year-button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        width: fit-content;
+      }
+      .year-button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Space between buttons */
+        width: 100%;
+        align-items: center;
+      }
+
+      .year-button {
+        background-color: #ff7527;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        white-space: nowrap; /* Prevent text wrapping within button */
+      }
+
+      .year-button:hover {
+        background-color: #ff5722;
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 600px) {
+        .year-button-container {
+          gap: 5px; /* Smaller gap on smaller screens */
+        }
+
+        .year-button {
+          padding: 8px 12px; /* Slightly smaller buttons on mobile */
+          font-size: 0.9em;
+        }
+      }
+
+      .year-button {
+        background-color: #ff7f50;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .year-button:hover {
+        background-color: #ff6347;
+      }
+
+      .year-button:active {
+        background-color: #ff4500;
+      }
+
+      /* Bar and Pie Chart Containers */
+      .bar-chart-container,
+      .pie-chart-container {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px;
+        /* margin-bottom: 20px; */
+      }
+
+      .bar-chart-container canvas,
+      .pie-chart-container canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .end-charts-container {
+          flex-direction: column;
+        }
+
+        .yearly-chart-container,
+        .pie-chart-container {
+          min-width: 100%;
+        }
+      }
+
+      /* Scrollbar for Chart Container */
+      .bar-chart-container,
+      .pie-chart-container {
+        scrollbar-width: thin;
+        scrollbar-color: #ff7f50 #f1f1f1;
+      }
+
+      .bar-chart-container::-webkit-scrollbar,
+      .pie-chart-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .bar-chart-container::-webkit-scrollbar-track,
+      .pie-chart-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      .bar-chart-container::-webkit-scrollbar-thumb,
+      .pie-chart-container::-webkit-scrollbar-thumb {
+        background-color: #ff7f50;
+        border-radius: 4px;
+      }
+      
+      /* Make the bar chart container scrollable on small screens */
+      .bar-chart-wrapper {
+  height: 300px !important; /* Force a much larger height with !important */
+  max-height: 300px !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 200px;
+  position: relative;
+  gap: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: visible !important;
+  white-space: nowrap;
+  padding-bottom: 30px; /* Increased padding for better visibility of labels */
+  margin-top: 30px; /* Added space at top for very tall bars */
+}
+
+/* Ensure the bars remain visible and properly spaced */
+.bar-chart-wrapper::-webkit-scrollbar {
+  height: 5px; /* Small scrollbar height */
+}
+
+.bar-chart-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.bar-chart-container {
+  width: 100%;
+  overflow: hidden;
+  overflow: visible !important;
+  margin-bottom: 20px; /* Added margin for better spacing */
+
+}
+
+.bar-chart-bar {
+  min-width: 40px; /* Ensure bars have a minimum width */
+  max-width: 100px;
+  flex-shrink: 0;
+  max-height: none !important;
+}
+
+/* Adjust year label container for better alignment */
+.year-label-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px; /* Added for better spacing from bars */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .bar-chart-wrapper {
+    justify-content: flex-start;
+    gap: 5px;
+  }
+  
+  .bar-chart-bar {
+    min-width: 30px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a class="home" href="/">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="stock.html">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="sip.html">SIP</a>
+                      <a href="swp.html">SWP</a>
+                      <a href="stp.html">STP</a>
+                    </div>
+                  </div>
+                  <a href="f&o.html">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="fd.html">FD</a>
+                  <a href="rd.html">RD</a>
+                  <a href="ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="po_fd.html">FD</a>
+                  <a href="po_rd.html">RD</a>
+                  <a href="po_ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="land.html">Land</a>
+                  <a href="flat-house.html">Flat/House</a>
+                  <a href="shop.html">Shop</a>
+                </div>
+              </div>
+              <a href="gold-silver.html">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="user">
+      <img id="user" src="user.png" alt="" />
+      <div>
+        <p class="logOut">Log Out</p>
+      </div>
+    </div>
+    <div class="container3">
+      <h1>STOCKS</h1>
+      <div class="div3">
+        <button class="addStocks">ADD STOCKS</button>
+        <button class="analysis" href="analysis.html">ANALYSIS</button>
+      </div>
+
+      <!-- Stock Table Container -->
+      <div class="stock-table-container">
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Stock Name</th>
+              <th>Industry</th>
+              <th>Stock Buying Price</th>
+              <th>Stock Buying Date</th>
+              <th>No. of Stocks</th>
+              <th>Investment Amount</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="stock-table-body">
+            <!-- Stock data will be populated here dynamically -->
+          </tbody>
+        </table>
+        <div id="no-stocks-message" class="no-stocks-message">
+          No stocks added yet. Click "ADD STOCKS" to add your first stock.
+        </div>
+      </div>
+    </div>
+
+    <form action="">
+      <div class="container4">
+        <h1>Stock Details</h1>
+        <label for="stock-name">Stock Name</label>
+        <div>
+          <input type="text" name="" id="stock-name" placeholder="Stock Name" />
+        </div>
+        <label for="industry">Industry</label>
+        <div>
+          <input
+            type="text"
+            name=""
+            id="industry"
+            placeholder="Stock Industry"
+          />
+        </div>
+        <label for="price">Stock Buying Price</label>
+        <div>
+          <input
+            type="number"
+            name=""
+            id="price"
+            placeholder="Stock Buying Price"
+          />
+        </div>
+        <label for="buying-date">Stock Buying Date</label>
+        <div>
+          <input type="date" name="" id="buying-date" />
+        </div>
+        <label for="no-stocks">No. of Stocks</label>
+        <div>
+          <input
+            type="number"
+            name=""
+            id="no-stocks"
+            placeholder="No. of Stocks"
+          />
+        </div>
+        <label for="investment-amount">Investment Amount</label>
+        <div>
+          <input
+            type="number"
+            name=""
+            id="investment-amount"
+            placeholder="Investment Amount"
+          />
+        </div>
+        <div>
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <script>
+      // Redirect to login page if user is not logged in
+      if (sessionStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "index.html";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const user = document.querySelector("#user");
+        const logOut = document.querySelector(".logOut");
+        const stockTableBody = document.getElementById("stock-table-body");
+        const noStocksMessage = document.getElementById("no-stocks-message");
+
+        // Ensure logOut div starts hidden
+        logOut.style.display = "none";
+
+        // Handle Home link redirection
+        const homeLinks = document.querySelectorAll("a[href='/']");
+        homeLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (sessionStorage.getItem("isLoggedIn") === "true") {
+              window.location.href = "homepage.html";
+            } else {
+              window.location.href = "index.html";
+            }
+          });
+        });
+
+        // Toggle logOut div when clicking user
+        user.addEventListener("click", (e) => {
+          e.preventDefault();
+          logOut.style.display =
+            logOut.style.display === "block" ? "none" : "block";
+        });
+
+        // Handle logout button click
+        logOut.addEventListener("click", () => {
+          // Instead of removing email and password from localStorage,
+          // we'll keep them for "remember me" functionality
+
+          // Just remove the active user data and set login status to false
+          localStorage.removeItem("userData");
+          localStorage.setItem("isLoggedIn", "false");
+
+          // Clear the session storage completely
+          sessionStorage.removeItem("isLoggedIn");
+
+          // Redirect to login page
+          window.location.href = "index.html";
+        });
+
+        // Function to load and display stocks
+        function loadStocks() {
+          // Get stocks from localStorage
+          const stocks = JSON.parse(localStorage.getItem("stocksData")) || [];
+
+          // Clear the table body
+          stockTableBody.innerHTML = "";
+
+          // Show/hide message based on whether there are stocks
+          if (stocks.length === 0) {
+            noStocksMessage.style.display = "block";
+          } else {
+            noStocksMessage.style.display = "none";
+
+            // Populate table with stock data
+            stocks.forEach((stock, index) => {
+              // Format the date for display
+              const date = new Date(stock.buyingDate);
+              const formattedDate = date.toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              });
+
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                              <td>${index + 1}</td>
+                              <td>${stock.stockName.toUpperCase()}</td>
+                              <td>${stock.industry}</td>
+                              <td>${parseFloat(stock.price).toFixed(2)}</td>
+                              <td>${formattedDate}</td>
+                              <td>${stock.noOfStocks}</td>
+                              <td>${parseFloat(stock.investmentAmount).toFixed(
+                                2
+                              )}</td>
+                              <td>
+                                <button class="remove-btn" data-index="${index}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                  </svg>
+                                </button>
+                              </td>
+                            `;
+              stockTableBody.appendChild(row);
+            });
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll(".remove-btn").forEach((button) => {
+              button.addEventListener("click", function () {
+                const index = parseInt(this.getAttribute("data-index"));
+                removeStock(index);
+              });
+            });
+          }
+        }
+
+        // Function to remove a stock
+        function removeStock(index) {
+          // Get stocks from localStorage
+          let stocks = JSON.parse(localStorage.getItem("stocksData")) || [];
+
+          // Confirm deletion
+          if (
+            confirm(
+              `Are you sure you want to remove ${stocks[index].stockName}?`
+            )
+          ) {
+            // Remove the stock
+            stocks.splice(index, 1);
+
+            // Save updated stocks to localStorage
+            localStorage.setItem("stocksData", JSON.stringify(stocks));
+
+            // Reload the table
+            loadStocks();
+          }
+        }
+
+        // Load stocks when page loads
+        loadStocks();
+
+        // Get elements for the form
+        const addStocksButton = document.querySelector(".addStocks");
+        const stockForm = document.querySelector(".container4");
+        const submitButton = document.getElementById("submit");
+
+        // Initially hide the form
+        stockForm.style.display = "none";
+
+        // Show form when ADD STOCKS button is clicked
+        addStocksButton.addEventListener("click", function () {
+          stockForm.style.display = "block";
+        });
+
+        // Handle form submission
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const stockName = document
+            .getElementById("stock-name")
+            .value.toUpperCase();
+          const industry = document.getElementById("industry").value;
+          const price = document.getElementById("price").value;
+          const buyingDate = document.getElementById("buying-date").value;
+          const noOfStocks = document.getElementById("no-stocks").value;
+          const investmentAmount =
+            document.getElementById("investment-amount").value;
+
+          // Validate form (basic validation)
+          if (
+            !stockName ||
+            !industry ||
+            !price ||
+            !buyingDate ||
+            !noOfStocks ||
+            !investmentAmount
+          ) {
+            alert("Please fill in all fields");
+            return;
+          }
+
+          // Create stock object
+          const stockData = {
+            stockName: stockName,
+            industry: industry,
+            price: price,
+            buyingDate: buyingDate,
+            noOfStocks: noOfStocks,
+            investmentAmount: investmentAmount,
+          };
+
+          // Get existing stocks from localStorage or initialize empty array
+          let stocks = JSON.parse(localStorage.getItem("stocksData")) || [];
+
+          // Add new stock data
+          stocks.push(stockData);
+
+          // Save to localStorage
+          localStorage.setItem("stocksData", JSON.stringify(stocks));
+
+          // Reset form
+          document.querySelector("form").reset();
+
+          // Hide form
+          stockForm.style.display = "none";
+
+          // Reload the stocks table
+          loadStocks();
+
+          // Show success message
+          alert("Stock added successfully!");
+        });
+
+        // new code for analysis
+        // Calculate investment amount automatically
+        const priceInput = document.getElementById("price");
+        const noOfStocksInput = document.getElementById("no-stocks");
+        const investmentAmountInput =
+          document.getElementById("investment-amount");
+
+        function calculateInvestment() {
+          if (priceInput.value && noOfStocksInput.value) {
+            const price = parseFloat(priceInput.value);
+            const quantity = parseInt(noOfStocksInput.value);
+            investmentAmountInput.value = (price * quantity).toFixed(2);
+          }
+        }
+
+        priceInput.addEventListener("input", calculateInvestment);
+        noOfStocksInput.addEventListener("input", calculateInvestment);
+
+        // new code for analysis
+        // Add this new code for the Analysis button functionality in stock.html
+        function generateMonthlyInvestmentData(stocks) {
+          // Create an object to store monthly investments
+          const monthlyInvestments = {};
+
+          // Process each stock to extract monthly investment
+          stocks.forEach((stock) => {
+            // Parse the buying date
+            const buyDate = new Date(stock.buyingDate);
+
+            // Create a key in the format 'YYYY-MM'
+            const monthKey = `${buyDate.getFullYear()}-${String(
+              buyDate.getMonth() + 1
+            ).padStart(2, "0")}`;
+
+            // Parse investment amount
+            const investmentAmount = parseFloat(stock.investmentAmount);
+
+            // Add or accumulate investment for the month
+            if (!monthlyInvestments[monthKey]) {
+              monthlyInvestments[monthKey] = 0;
+            }
+            monthlyInvestments[monthKey] += investmentAmount;
+          });
+
+          return monthlyInvestments;
+        }
+        const analysisButton = document.querySelector(".analysis");
+
+        analysisButton.addEventListener("click", function () {
+          // Get stocks data from localStorage
+          const stocks = JSON.parse(localStorage.getItem("stocksData")) || [];
+
+          if (stocks.length === 0) {
+            alert("No stocks to analyze. Please add stocks first.");
+            return;
+          }
+
+          // Generate monthly investment data
+          const monthlyInvestmentData = generateMonthlyInvestmentData(stocks);
+
+          // Create analysis container (or use existing one if it exists)
+          let analysisContainer = document.getElementById("analysis-container");
+          if (!analysisContainer) {
+            analysisContainer = document.createElement("div");
+            analysisContainer.id = "analysis-container";
+            analysisContainer.className = "analysis-container";
+            document
+              .querySelector(".container3")
+              .appendChild(analysisContainer);
+          }
+
+          // Calculate analysis data
+          const totalInvestment = stocks.reduce(
+            (total, stock) => total + parseFloat(stock.investmentAmount),
+            0
+          );
+
+          // Group stocks by industry for sector allocation
+          const sectorData = {};
+          stocks.forEach((stock) => {
+            if (!sectorData[stock.industry]) {
+              sectorData[stock.industry] = 0;
+            }
+            sectorData[stock.industry] += parseFloat(stock.investmentAmount);
+          });
+
+          // Group investments by month/year for timeline analysis
+          const timelineData = {};
+          stocks.forEach((stock) => {
+            const date = new Date(stock.buyingDate);
+            const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
+
+            if (!timelineData[monthYear]) {
+              timelineData[monthYear] = 0;
+            }
+            timelineData[monthYear] += parseFloat(stock.investmentAmount);
+          });
+
+          // Sort timeline keys chronologically
+          const sortedTimelineKeys = Object.keys(timelineData).sort((a, b) => {
+            const [aMonth, aYear] = a.split("/").map(Number);
+            const [bMonth, bYear] = b.split("/").map(Number);
+
+            if (aYear === bYear) {
+              return aMonth - bMonth;
+            }
+            return aYear - bYear;
+          });
+
+          // Clear previous analysis if any
+          analysisContainer.innerHTML = "";
+
+          // Create close button
+          const closeButton = document.createElement("button");
+          closeButton.className = "close-analysis";
+          closeButton.innerHTML = "✕";
+          closeButton.addEventListener("click", function () {
+            analysisContainer.style.display = "none";
+          });
+
+          // Create analysis content
+          const content = document.createElement("div");
+          content.className = "analysis-content";
+
+          // Add header
+          const header = document.createElement("h2");
+          header.textContent = "Stock Portfolio Analysis";
+          content.appendChild(header);
+
+          // Add summary section
+          const summarySection = document.createElement("div");
+          summarySection.className = "analysis-summary";
+
+          summarySection.innerHTML = `
+            <div class="summary-card">
+              <h3>Total Investment</h3>
+              <p class="amount">₹${totalInvestment.toLocaleString()}</p>
+            </div>
+            <div class="summary-card">
+              <h3>Total Stocks</h3>
+              <p class="amount">${stocks.length}</p>
+            </div>
+            <div class="summary-card">
+              <h3>Industry Diversification</h3>
+              <p class="amount">${Object.keys(sectorData).length} sectors</p>
+            </div>
+          `;
+
+          content.appendChild(summarySection);
+
+          // Add sector allocation chart
+          const sectorSection = document.createElement("div");
+          sectorSection.className = "sector-allocation";
+
+          const sectorHeader = document.createElement("h3");
+          sectorHeader.textContent = "Sector Allocation";
+          sectorSection.appendChild(sectorHeader);
+
+          // Create visual representation for sector allocation
+          const chartDiv = document.createElement("div");
+          chartDiv.className = "sector-chart-container";
+
+          // Generate colors for sectors
+          const colors = [
+            "#4299e1",
+            "#48bb78",
+            "#ed8936",
+            "#9f7aea",
+            "#f56565",
+            "#38b2ac",
+            "#667eea",
+            "#d69e2e",
+            "#e53e3e",
+            "#805ad5",
+          ];
+
+          // Calculate percentages for sectors
+          const sectorPercentages = {};
+          Object.keys(sectorData).forEach((sector) => {
+            sectorPercentages[sector] = Math.round(
+              (sectorData[sector] / totalInvestment) * 100
+            );
+          });
+
+          // Create conic gradient for pie chart
+          let conicGradientValue = "";
+          let currentDegree = 0;
+
+          Object.keys(sectorData).forEach((sector, index) => {
+            const percentage = sectorPercentages[sector];
+            const color = colors[index % colors.length];
+
+            // Calculate degrees for this sector (3.6 degrees = 1%)
+            const sectorDegrees = percentage * 3.6;
+
+            // Add to gradient
+            if (index > 0) {
+              conicGradientValue += ", ";
+            }
+
+            conicGradientValue += `${color} ${currentDegree}deg ${
+              currentDegree + sectorDegrees
+            }deg`;
+            currentDegree += sectorDegrees;
+          });
+
+          // Create chart HTML
+          let chartHTML = `
+            <div class="sector-chart" style="background: conic-gradient(${conicGradientValue})"></div>
+            <div class="chart-legend">
+          `;
+
+          // Add legend items
+          Object.keys(sectorData).forEach((sector, index) => {
+            const percentage = sectorPercentages[sector];
+            const color = colors[index % colors.length];
+
+            chartHTML += `
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: ${color}"></span>
+                <span>${sector} (${percentage}%)</span>
+              </div>
+            `;
+          });
+
+          chartHTML += `</div>`;
+          chartDiv.innerHTML = chartHTML;
+          sectorSection.appendChild(chartDiv);
+          content.appendChild(sectorSection);
+
+          // Add top holdings section
+          const topHoldingsSection = document.createElement("div");
+          topHoldingsSection.className = "top-holdings-section";
+
+          const topHoldingsHeader = document.createElement("h3");
+          topHoldingsHeader.textContent = "Top Holdings";
+          topHoldingsSection.appendChild(topHoldingsHeader);
+
+          // Modify the charts section to use actual investment data
+          const chartSection = document.createElement("div");
+          chartSection.className = "charts-section";
+
+          const chartHeader = document.createElement("h3");
+          chartHeader.textContent = "Investment Analysis";
+          chartSection.appendChild(chartHeader);
+
+          // Create yearly investment chart
+          const yearlyChartContainer = document.createElement("div");
+          yearlyChartContainer.className = "yearly-chart-container";
+
+          const yearlyChartTitle = document.createElement("h4");
+          yearlyChartTitle.textContent = "Yearly Investment";
+          yearlyChartContainer.appendChild(yearlyChartTitle);
+
+          // Group investments by year
+          const yearlyInvestmentData = {};
+          Object.entries(monthlyInvestmentData).forEach(
+            ([monthKey, amount]) => {
+              const year = monthKey.split("-")[0];
+              if (!yearlyInvestmentData[year]) {
+                yearlyInvestmentData[year] = 0;
+              }
+              yearlyInvestmentData[year] += amount;
+            }
+          );
+
+          const yearlyBarChart = createBarChart(
+            yearlyChartContainer,
+            yearlyInvestmentData
+          );
+          yearlyChartContainer.appendChild(yearlyBarChart);
+
+          // Create container for monthly charts
+          const monthlyChartContainer = document.createElement("div");
+          monthlyChartContainer.className = "monthly-chart-container";
+          monthlyChartContainer.style.display = "none";
+
+          const monthlyChartTitle = document.createElement("h4");
+          monthlyChartTitle.textContent = "Monthly Investment";
+          monthlyChartContainer.appendChild(monthlyChartTitle);
+
+          // Create year selection buttons
+          const yearButtonContainer = document.createElement("div");
+          yearButtonContainer.className = "year-button-container";
+
+          // Get unique years from monthly investment data
+          const uniqueYears = [
+            ...new Set(
+              Object.keys(monthlyInvestmentData).map((key) => key.split("-")[0])
+            ),
+          ];
+
+          uniqueYears.forEach((year) => {
+            const yearButton = document.createElement("button");
+            yearButton.textContent = year;
+            yearButton.className = "year-button";
+
+            yearButton.addEventListener("click", () => {
+              // Filter monthly data for the selected year
+              const yearMonthlyData = {};
+              Object.entries(monthlyInvestmentData).forEach(
+                ([monthKey, amount]) => {
+                  if (monthKey.startsWith(year)) {
+                    // Extract month name
+                    const monthNum = parseInt(monthKey.split("-")[1]);
+                    const monthName = new Date(
+                      year,
+                      monthNum - 1
+                    ).toLocaleString("default", { month: "long" });
+                    yearMonthlyData[monthName] = amount;
+                  }
+                }
+              );
+
+              // Create monthly bar chart
+              monthlyChartContainer.innerHTML = ""; // Clear previous content
+              monthlyChartContainer.appendChild(monthlyChartTitle);
+
+              const monthlyBarChart = createBarChart(
+                monthlyChartContainer,
+                yearMonthlyData,
+                true
+              );
+              monthlyChartContainer.appendChild(monthlyBarChart);
+              monthlyChartContainer.style.display = "block";
+            });
+
+            yearButtonContainer.appendChild(yearButton);
+          });
+
+          // Add charts to the section
+          chartSection.appendChild(yearlyChartContainer);
+          chartSection.appendChild(yearButtonContainer);
+          chartSection.appendChild(monthlyChartContainer);
+
+          // Add charts section to the content
+          content.appendChild(chartSection);
+
+          // Sort stocks by investment amount
+          const sortedStocks = [...stocks].sort(
+            (a, b) =>
+              parseFloat(b.investmentAmount) - parseFloat(a.investmentAmount)
+          );
+
+          // Take top 5 or all if less than 5
+          const topStocks = sortedStocks.slice(
+            0,
+            Math.min(5, sortedStocks.length)
+          );
+
+          const topHoldingsTable = document.createElement("table");
+          topHoldingsTable.className = "top-holdings-table";
+
+          let topHoldingsHTML = `
+            <thead>
+              <tr>
+                <th>Stock Name</th>
+                <th>Industry</th>
+                <th>Investment Amount</th>
+                <th>% of Portfolio</th>
+              </tr>
+            </thead>
+            <tbody>
+          `;
+
+          topStocks.forEach((stock) => {
+            const percentOfPortfolio = Math.round(
+              (parseFloat(stock.investmentAmount) / totalInvestment) * 100
+            );
+
+            topHoldingsHTML += `
+              <tr>
+                <td>${stock.stockName}</td>
+                <td>${stock.industry}</td>
+                <td>₹${parseFloat(stock.investmentAmount).toLocaleString()}</td>
+                <td>${percentOfPortfolio}%</td>
+              </tr>
+            `;
+          });
+
+          topHoldingsHTML += `</tbody>`;
+          topHoldingsTable.innerHTML = topHoldingsHTML;
+
+          topHoldingsSection.appendChild(topHoldingsTable);
+          content.appendChild(topHoldingsSection);
+
+          // Add timeline section
+          if (sortedTimelineKeys.length > 0) {
+            const timelineSection = document.createElement("div");
+            timelineSection.className = "timeline-section";
+
+            const timelineHeader = document.createElement("h3");
+            timelineHeader.textContent = "Investment Timeline";
+            timelineSection.appendChild(timelineHeader);
+
+            const timelineTable = document.createElement("table");
+            timelineTable.className = "timeline-table";
+
+            let timelineHTML = `
+              <thead>
+                <tr>
+                  <th>Month/Year</th>
+                  <th>Investment Amount</th>
+                  <th>% of Total</th>
+                </tr>
+              </thead>
+              <tbody>
+            `;
+
+            sortedTimelineKeys.forEach((key) => {
+              const amount = timelineData[key];
+              const percentOfTotal = Math.round(
+                (amount / totalInvestment) * 100
+              );
+
+              timelineHTML += `
+                <tr>
+                  <td>${key}</td>
+                  <td>₹${amount.toLocaleString()}</td>
+                  <td>${percentOfTotal}%</td>
+                </tr>
+              `;
+            });
+
+            timelineHTML += `</tbody>`;
+            timelineTable.innerHTML = timelineHTML;
+
+            timelineSection.appendChild(timelineTable);
+            content.appendChild(timelineSection);
+          }
+
+          // Add recommendations section
+          const recommendationsSection = document.createElement("div");
+          recommendationsSection.className = "recommendations-section";
+
+          const recommendationsHeader = document.createElement("h3");
+          recommendationsHeader.textContent = "Insights & Recommendations";
+          recommendationsSection.appendChild(recommendationsHeader);
+
+          const recommendationsList = document.createElement("ul");
+
+          // Generate some basic recommendations based on data
+          const recommendations = [];
+
+          // Check for diversification
+          if (Object.keys(sectorData).length < 3 && stocks.length > 3) {
+            recommendations.push(
+              "Consider diversifying your portfolio across more industry sectors to reduce risk."
+            );
+          }
+
+          // Check for concentration risk
+          const largestHolding = topStocks[0];
+          if (largestHolding) {
+            const largestPercentage = Math.round(
+              (parseFloat(largestHolding.investmentAmount) / totalInvestment) *
+                100
+            );
+
+            if (largestPercentage > 30) {
+              recommendations.push(
+                `Your largest holding (${largestHolding.stockName}) represents ${largestPercentage}% of your portfolio. Consider rebalancing to reduce concentration risk.`
+              );
+            }
+          }
+
+          // Check investment frequency
+          if (sortedTimelineKeys.length < 2) {
+            recommendations.push(
+              "Consider dollar-cost averaging by investing regularly over time rather than all at once."
+            );
+          }
+
+          // Add general recommendation
+          recommendations.push(
+            "Regular portfolio review and rebalancing helps maintain your desired risk level and investment goals."
+          );
+
+          recommendations.forEach((rec) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = rec;
+            recommendationsList.appendChild(listItem);
+          });
+
+          recommendationsSection.appendChild(recommendationsList);
+          content.appendChild(recommendationsSection);
+
+          // Add content and close button to the container
+          analysisContainer.appendChild(closeButton);
+          analysisContainer.appendChild(content);
+
+          // Show the analysis container
+          analysisContainer.style.display = "block";
+        });
+
+        // Modify the createBarChart function to handle currency formatting
+        function createBarChart(container, data, isCurrency = false) {
+          const sortedYears = Object.keys(data).sort((a, b) => a - b);
+          const sortedData = {};
+          sortedYears.forEach((year) => {
+            sortedData[year] = data[year];
+          });
+
+          // Create chart container
+          const chartContainer = document.createElement("div");
+          chartContainer.className = "bar-chart-container";
+
+          // Determine max value for scaling
+          const maxValue = Math.max(...Object.values(data));
+
+          // Create bar chart wrapper
+          const barChartWrapper = document.createElement("div");
+          barChartWrapper.className = "bar-chart-wrapper";
+          barChartWrapper.style.display = "flex";
+          barChartWrapper.style.justifyContent = "space-around";
+          barChartWrapper.style.alignItems = "flex-end";
+          barChartWrapper.style.height = "200px";
+          barChartWrapper.style.position = "relative";
+          barChartWrapper.style.gap = "10px";
+
+          // Create year label container
+          const yearLabelContainer = document.createElement("div");
+          yearLabelContainer.style.position = "absolute";
+          yearLabelContainer.style.bottom = "-20px";
+          yearLabelContainer.style.display = "flex";
+          yearLabelContainer.style.width = "100%";
+          yearLabelContainer.style.justifyContent = "space-around";
+          yearLabelContainer.style.gap = "10px";
+
+          // Render bars and labels
+          Object.keys(data).forEach((key) => {
+            const value = data[key];
+            const barHeight = (value / maxValue) * 180; // Max height of 180px
+
+            // Create bar container to hold both bar and label
+            const barContainer = document.createElement("div");
+            barContainer.style.display = "flex";
+            barContainer.style.flexDirection = "column";
+            barContainer.style.alignItems = "center";
+            barContainer.style.width = "100%";
+
+            // Create bar element
+            const barElement = document.createElement("div");
+            barElement.className = "bar-chart-bar";
+            barElement.style.width = "100%";
+            barElement.style.backgroundColor = "#ff7527";
+            barElement.style.height = `${barHeight}px`;
+            barElement.style.display = "flex";
+            barElement.style.flexDirection = "column";
+            barElement.style.alignItems = "center";
+            barElement.style.justifyContent = "flex-top";
+
+            // Create value label
+            const valueLabel = document.createElement("div");
+            valueLabel.textContent = `₹${Number(value).toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`;
+            valueLabel.style.fontSize = "12px";
+            valueLabel.style.fontWeight = "500";
+            valueLabel.style.color = "black";
+            valueLabel.style.display = "top";
+
+            // Create year label
+            const yearLabel = document.createElement("div");
+            yearLabel.textContent = key;
+            yearLabel.style.fontSize = "12px";
+            yearLabel.style.marginTop = "5px";
+
+            // Append value label to bar
+            barElement.appendChild(valueLabel);
+
+            // Append bar and year label to bar container
+            barContainer.appendChild(barElement);
+            barContainer.appendChild(yearLabel);
+
+            // Append bar container to wrapper
+            barChartWrapper.appendChild(barContainer);
+          });
+
+          // Append the bar chart wrapper to the chart container
+          chartContainer.appendChild(barChartWrapper);
+
+          // Append the bar chart container to the pie chart section
+          const pieChartSection = document.querySelector(
+            ".sector-chart-container"
+          );
+          if (pieChartSection) {
+            pieChartSection.appendChild(chartContainer);
+          }
+
+          return chartContainer;
+        }
+        function createSectorCharts(sectorData, totalInvestment) {
+          // Generate colors for sectors
+          const colors = [
+            "#4299e1",
+            "#48bb78",
+            "#ed8936",
+            "#9f7aea",
+            "#f56565",
+            "#38b2ac",
+            "#667eea",
+            "#d69e2e",
+            "#e53e3e",
+            "#805ad5",
+          ];
+
+          // Calculate percentages for sectors
+          const sectorPercentages = {};
+          Object.keys(sectorData).forEach((sector) => {
+            sectorPercentages[sector] = Math.round(
+              (sectorData[sector] / totalInvestment) * 100
+            );
+          });
+
+          // Create chart HTML for Pie Chart
+          let conicGradientValue = "";
+          let currentDegree = 0;
+
+          Object.keys(sectorData).forEach((sector, index) => {
+            const percentage = sectorPercentages[sector];
+            const color = colors[index % colors.length];
+
+            // Calculate degrees for this sector (3.6 degrees = 1%)
+            const sectorDegrees = percentage * 3.6;
+
+            // Add to gradient
+            if (index > 0) {
+              conicGradientValue += ", ";
+            }
+
+            conicGradientValue += `${color} ${currentDegree}deg ${
+              currentDegree + sectorDegrees
+            }deg`;
+            currentDegree += sectorDegrees;
+          });
+
+          // Prepare data for bar chart
+          const barChartData = Object.keys(sectorData).map((sector) => ({
+            sector,
+            amount: sectorData[sector],
+            percentage: sectorPercentages[sector],
+          }));
+
+          // Sort bar chart data by amount in descending order
+          barChartData.sort((a, b) => b.amount - a.amount);
+
+          // Create charts container
+          const chartsContainer = document.createElement("div");
+          chartsContainer.className = "sector-charts-container";
+
+          // Pie Chart Section
+          const pieChartDiv = document.createElement("div");
+          pieChartDiv.className = "sector-chart-container";
+
+          // Create chart HTML
+          let chartHTML = `
+      <div class="sector-chart" style="background: conic-gradient(${conicGradientValue})"></div>
+      <div class="chart-legend">
+    `;
+
+          // Add legend items
+          Object.keys(sectorData).forEach((sector, index) => {
+            const percentage = sectorPercentages[sector];
+            const color = colors[index % colors.length];
+
+            chartHTML += `
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: ${color}"></span>
+          <span>${sector} (${percentage}%)</span>
+        </div>
+      `;
+          });
+
+          chartHTML += `</div>`;
+          pieChartDiv.innerHTML = chartHTML;
+
+          // Bar Chart Section
+          const barChartDiv = document.createElement("div");
+          barChartDiv.className = "sector-bar-chart-container";
+
+          // Create canvas for bar chart
+          const canvas = document.createElement("canvas");
+          barChartDiv.appendChild(canvas);
+
+          // Render bar chart using Chart.js
+          const ctx = canvas.getContext("2d");
+
+          // Set canvas dimensions
+          canvas.width = 400;
+          canvas.height = 200;
+
+          // Bar chart configuration
+          const barWidth = 40;
+          const spacing = 10;
+          const maxAmount = Math.max(
+            ...barChartData.map((item) => item.amount)
+          );
+
+          // Clear canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // Render bars
+          barChartData.forEach((item, index) => {
+            const barHeight = (item.amount / maxAmount) * 180;
+            const x = index * (barWidth + spacing);
+            const color = colors[index % colors.length];
+
+            // Draw bar
+            ctx.fillStyle = color;
+            ctx.fillRect(x, 200 - barHeight, barWidth, barHeight);
+
+            // Add labels
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.font = "10px Arial";
+
+            // Sector name
+            ctx.fillText(item.sector, x + barWidth / 2, 215);
+
+            // Percentage
+            ctx.fillText(
+              `${item.percentage}%`,
+              x + barWidth / 2,
+              200 - barHeight - 5
+            );
+          });
+
+          // Add charts to container
+          chartsContainer.appendChild(pieChartDiv);
+          chartsContainer.appendChild(barChartDiv);
+
+          return chartsContainer;
+        }
+
+        // Modify the existing analysis section to use this new function
+        // Replace the existing sector chart creation code with this call
+        // const chartsContainer = createSectorCharts(sectorData, totalInvestment);
+        // sectorSection.appendChild(chartsContainer);
+        // Function to create a bar chart from data
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle && menu) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        } // Function to handle dropdowns
+        function setupDropdown(parentSelector, contentSelector) {
+          const parentElement = document.querySelector(parentSelector);
+          const contentElement = document.querySelector(contentSelector);
+
+          if (parentElement && contentElement) {
+            parentElement.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Hide other dropdowns
+              document
+                .querySelectorAll(
+                  ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+                )
+                .forEach((dropdown) => {
+                  if (dropdown !== contentElement) {
+                    dropdown.classList.remove("show");
+                  }
+                });
+
+              // Toggle the clicked dropdown
+              contentElement.classList.toggle("show");
+            });
+          }
+        }
+        // Setup main Services menu dropdown
+        setupDropdown(".services", ".dropdown-content");
+
+        // Setup nested dropdowns inside Services
+        setupDropdown(".stock-market > a", ".stock-market-content");
+        setupDropdown(".mutual-fund > a", ".mutual-fund-content");
+        setupDropdown(".banking > a", ".banking-content");
+        setupDropdown(".post-office > a", ".post-office-content");
+        setupDropdown(".real-estate > a", ".real-estate-content");
+
+        // Reset dropdowns when switching to desktop mode
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            if (menu) menu.classList.remove("active");
+            document
+              .querySelectorAll(
+                ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+              )
+              .forEach((dropdown) => dropdown.classList.remove("show"));
+          }
+        });
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

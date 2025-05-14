@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "rjcmw8dsxw");
+  </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico.png" />
+    <title>TrackVest</title>
+    <style>
+      /* Preserve original styles */
+      .menu {
+        margin: 0;
+        padding-left: 20px;
+        /* position: fixed; */
+      }
+      .div1 .container {
+        display: flex;
+        align-items: center;
+      }
+      .div1 .container h1 {
+        font-size: 70px;
+      }
+      .user img {
+        height: 30px;
+        width: 30px;
+        background: none;
+        /* background-color: #dee1e6; */
+        /* padding-top: 120px; */
+        top: 15%;
+        position: absolute;
+        float: right;
+        left: 98%;
+        overflow: hidden;
+      }
+      .user .logOut {
+        display: none;
+        height: 40px;
+        width: 90px;
+        background-color: white;
+        top: 20%;
+        position: absolute;
+        float: right;
+        left: 94%;
+        color: red;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      /* Add menu toggle for mobile */
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 1002;
+      }
+      @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        .user .logOut {
+          float: right;
+          left: 93%;
+        }
+      }
+      /* Mobile Menu Styles */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+        .div1 .container {
+          margin-top: 30%;
+        }
+
+        nav .menu {
+          display: block;
+          left: -100%;
+          transition: 0.3s;
+          overflow-y: auto;
+          background-color: black;
+          z-index: 1000;
+          top: 100px;
+          height: calc(100vh - 100px);
+          width: 100%;
+          position: fixed;
+          padding-left: 0;
+        }
+
+        nav .menu.active {
+          left: 0;
+        }
+
+        nav .menu ul {
+          display: block;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        nav .menu li {
+          margin: 0;
+          width: 100%;
+          padding: 10px 20px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+        /* Fix dropdown positioning */
+        .dropdown {
+          width: 100%;
+          display: block;
+        }
+
+        /* Reset all dropdown menus */
+        .dropdown-content,
+        .stock-market-content,
+        .mutual-fund-content,
+        .banking-content,
+        .post-office-content,
+        .real-estate-content {
+          position: static;
+          width: 100%;
+          /* display: none; */
+          background-color: #222;
+          box-shadow: none;
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        /* Show when active class is applied */
+        .dropdown-content.show,
+        .stock-market-content.show,
+        .mutual-fund-content.show,
+        .banking-content.show,
+        .post-office-content.show,
+        .real-estate-content.show {
+          display: block;
+        }
+
+        /* Make links more tappable */
+        .dropdown-content a,
+        .stock-market-content a,
+        .mutual-fund-content a,
+        .banking-content a,
+        .post-office-content a,
+        .real-estate-content a {
+          padding: 12px 20px;
+          display: block;
+          color: white;
+        }
+
+        /* Remove hover behavior on mobile */
+        .dropdown:hover .dropdown-content,
+        .stock-market:hover .stock-market-content,
+        .mutual-fund:hover .mutual-fund-content,
+        .banking:hover .banking-content,
+        .post-office:hover .post-office-content,
+        .real-estate:hover .real-estate-content {
+          display: none;
+        }
+
+        /* Add down arrows for clickable items */
+        .services:after,
+        .stock-market > a:after,
+        .mutual-fund > a:after,
+        .banking > a:after,
+        .post-office > a:after,
+        .real-estate > a:after {
+          content: " ▼";
+          font-size: 10px;
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        /* Responsive homepage content while preserving alignment */
+        .div1 {
+          flex-direction: column;
+          padding-top: 20px;
+        }
+
+        .div1 .container h1 {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        .div1 .container2 img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .user img {
+          left: 90%;
+        }
+
+        .user .logOut {
+          left: 84%;
+        }
+      }
+
+      /* Smaller screens */
+      @media (max-width: 480px) {
+        .div1 {
+          background-color: #dee1e6;
+          height: 100vh;
+        }
+        .div1 .container {
+          margin-top: 30%;
+        }
+        .div1 .container h1 {
+          font-size: 34px;
+        }
+
+        .menu {
+          padding-left: 0;
+        }
+
+        .user img {
+          left: 85%;
+        }
+
+        .user .logOut {
+          left: 75%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="TRACKVEST.png" alt="" />
+      </div>
+      <div class="menu-toggle">☰</div>
+      <div class="menu">
+        <ul>
+          <li><a href="/" class="home">Home</a></li>
+          <div class="dropdown">
+            <li class="services">Services</li>
+            <div class="dropdown-content">
+              <div class="stock-market">
+                <a href="#">Stock Market</a>
+                <div class="stock-market-content">
+                  <a href="stock.html">Stock</a>
+                  <div class="mutual-fund">
+                    <a href="#">Mutual Funds</a>
+                    <div class="mutual-fund-content">
+                      <a href="sip.html">SIP</a>
+                      <a href="swp.html">SWP</a>
+                      <a href="stp.html">STP</a>
+                    </div>
+                  </div>
+                  <a href="f&o.html">Future & Options</a>
+                </div>
+              </div>
+              <div class="banking">
+                <a href="#">Banking</a>
+                <div class="banking-content">
+                  <a href="fd.html">FD</a>
+                  <a href="rd.html">RD</a>
+                  <a href="ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="post-office">
+                <a href="#">Post Office</a>
+                <div class="post-office-content">
+                  <a href="po_fd.html">FD</a>
+                  <a href="po_rd.html">RD</a>
+                  <a href="po_ppf.html">PPF</a>
+                </div>
+              </div>
+              <div class="real-estate">
+                <a href="#">Real Estate</a>
+                <div class="real-estate-content">
+                  <a href="land.html">Land</a>
+                  <a href="flat-house.html">Flat/House</a>
+                  <a href="shop.html">Shop</a>
+                </div>
+              </div>
+              <a href="gold-silver.html">Gold/Silver</a>
+            </div>
+          </div>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="user">
+      <img id="user" src="user.png" alt="" />
+      <div>
+        <p class="logOut">Log Out</p>
+      </div>
+    </div>
+    <div class="div1">
+      <div class="container">
+        <h1>
+          Effortless <br />
+          Investment<br />
+          Tracking for a<br />
+          Smarter You.
+        </h1>
+      </div>
+      <div class="container2">
+        <img src="home 1.jpg" alt="" />
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if the user is logged in
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+          if (localStorage.getItem("isSignedUp") === "true") {
+            window.location.href = "login.html"; // Redirect to login
+          } else {
+            window.location.href = "signup.html"; // Redirect to signup
+          }
+        }
+
+        // User is logged in, setup UI for logged-in state
+        const user = document.querySelector("#user");
+        const logOut = document.querySelector(".logOut");
+
+        if (user && logOut) {
+          logOut.style.display = "none";
+
+          user.addEventListener("click", (e) => {
+            e.preventDefault();
+            logOut.style.display =
+              logOut.style.display === "block" ? "none" : "block";
+          });
+
+          logOut.addEventListener("click", () => {
+            sessionStorage.removeItem("isLoggedIn");
+            if (localStorage.getItem("rememberMe") !== "true") {
+              localStorage.removeItem("email");
+              localStorage.removeItem("password");
+            }
+            window.location.href = "login.html"; // Redirect to login
+          });
+        }
+
+        // Home link logic
+        const homeLink = document.querySelector(".home");
+        if (homeLink) {
+          homeLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+            window.location.href = isLoggedIn ? "homepage.html" : "index.html";
+          });
+        }
+
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        if (menuToggle && menu) {
+          menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+          });
+        }
+
+        // Function to handle dropdowns
+        function setupDropdown(parentSelector, contentSelector) {
+          const parentElement = document.querySelector(parentSelector);
+          const contentElement = document.querySelector(contentSelector);
+
+          if (parentElement && contentElement) {
+            parentElement.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Hide other dropdowns
+              document
+                .querySelectorAll(
+                  ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+                )
+                .forEach((dropdown) => {
+                  if (dropdown !== contentElement) {
+                    dropdown.classList.remove("show");
+                  }
+                });
+
+              // Toggle the clicked dropdown
+              contentElement.classList.toggle("show");
+            });
+          }
+        }
+
+        // Setup main Services menu dropdown
+        setupDropdown(".services", ".dropdown-content");
+
+        // Setup nested dropdowns inside Services
+        setupDropdown(".stock-market > a", ".stock-market-content");
+        setupDropdown(".mutual-fund > a", ".mutual-fund-content");
+        setupDropdown(".banking > a", ".banking-content");
+        setupDropdown(".post-office > a", ".post-office-content");
+        setupDropdown(".real-estate > a", ".real-estate-content");
+
+        // Reset dropdowns when switching to desktop mode
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            if (menu) menu.classList.remove("active");
+            document
+              .querySelectorAll(
+                ".dropdown-content, .stock-market-content, .mutual-fund-content, .banking-content, .post-office-content, .real-estate-content"
+              )
+              .forEach((dropdown) => dropdown.classList.remove("show"));
+          }
+        });
+        if (window.innerWidth <= 768) {
+          const serviceItem = document.querySelector(".services");
+          if (serviceItem) {
+            serviceItem.addEventListener("click", function (e) {
+              const dropdownContent =
+                document.querySelector(".dropdown-content");
+              if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+                e.stopPropagation();
+              }
+            });
+            const nestedDropdowns = document.querySelectorAll(
+              ".stock-market, .mutual-fund, .banking, .post-office, .real-estate"
+            );
+            nestedDropdowns.forEach(function (dropdown) {
+              const link = dropdown.querySelector("a");
+              if (link) {
+                link.addEventListener("click", function (e) {
+                  const content = dropdown.querySelector("div");
+                  if (content) {
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
